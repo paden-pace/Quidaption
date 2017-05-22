@@ -1,0 +1,42 @@
+{
+  "name": "quid_app",
+  "version": "1.0.0",
+  "description": "application using DB technology to archive data for Quidditch players",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paden-pace/quid_app.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "path",
+    "js",
+    "html",
+    "css",
+    "JavaScript",
+    "moment.js"
+  ],
+  "author": "Paden J. Pace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paden-pace/quid_app/issues"
+  },
+  "homepage": "https://github.com/paden-pace/quid_app#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-messages": "^1.0.1",
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.10.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
