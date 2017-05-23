@@ -51,6 +51,7 @@ app.use(cookieParser());
 // Make public a static dir
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // Express Session
 app.use(session({
     secret: 'secret',
@@ -93,6 +94,9 @@ app.use(function(req, res, next){
 
 app.use('/', routes);
 app.use('/users', users);
+
+require("./routes/html-routes.js")(app);
+// require("./routes/api-routes.js")(app);
 
 
 // =========  Database configuration with mongoose ===============
