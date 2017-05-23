@@ -1,0 +1,106 @@
+
+body{
+    text-align: center;
+    margin: 0px;
+}
+
+/*.body.hidden{
+    display: none;
+}*/
+
+
+h3{
+    margin: 0px;
+}
+
+h3, .div-text{
+    font-size: 14px;
+}
+
+.main-row{
+    border: solid 1px #000000;
+}
+
+.col{
+    padding: 0px;
+}
+
+.head-col{
+    padding: 0px;
+}
+
+.home-div-btn{
+    background-color: blue;
+    color: #ffffff;
+}
+
+.other-div-btn{
+    background-color: blue;
+    color: #ffffff;
+}
+
+.div-text{
+    margin: 0px;
+}
+
+.time-row{
+    background-color: #000000;
+}
+
+.stop-head-row {
+    background: red;
+}
+
+.start-head-row {
+    background: green;
+}
+
+.reset-head-row {
+    background: goldenrod;
+}
+
+.head-row{
+    color: #ffffff;
+    margin: 0px;
+}
+
+.clock{
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.score-col.Red{
+    background-color: red;
+    color: black;
+}
+.score-col.Orange{
+    background-color: #ff7b00;
+    color: black;
+}
+.score-col.Yellow{
+    background-color: yellow;
+    color: black;
+}
+.score-col.Green{
+    background-color: green;
+    color: white;
+}
+.score-col.Blue{
+    background-color: blue;
+    color: white;
+}
+.score-col.Purple{
+    background-color: purple;
+    color: white;
+}
+.score-col.White{
+    background-color: white;
+    color: black;
+}
+.score-col.Gray{
+    background-color: gray;
+    color: black;
+}
+.score-col.Black{
+    background-color: black;
+    color: white;
+}

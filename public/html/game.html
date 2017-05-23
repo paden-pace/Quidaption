@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>QA GamePlay</title>
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+
+    <!-- Local Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+  </head>
+  <body>
+    <div class="body" id="body-set">
+        <div class="row">
+            <h2 class="page-header"> Team Set-up</h2>
+        </div>
+        <div class="row">
+            <form method="post" action="">
+                <div class="col col-lg-6">
+                    <div class="form-group">
+                        <label>Home Team</label>
+                        <input type="text" class="form-control" name="homeName" id="home-name-input" placeholder="Home Team">
+                    </div>
+                    <div class="form-group">
+                        <label class="color-label" id="home-color-label">Home Color:</label>
+                        <select id="home-color-input" class="home-color-input form-control">
+                            <option class="option-red">Red</option>
+                            <option class="option-orange">Orange</option>
+                            <option class="option-yellow">Yellow</option>
+                            <option class="option-green">Green</option>
+                            <option class="option-blue">Blue</option>
+                            <option class="option-purple">Purple</option>
+                            <option class="option-white">White</option>
+                            <option class="option-gray">Gray</option>
+                            <option class="option-black">Black</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col col-lg-6">
+                    <div class="form-group">
+                        <label>Away Team</label>
+                        <input type="text" id="away-name-input" class="form-control" name="awayName" placeholder="Away Team">
+                    </div>
+                    <div class="form-group">
+                        <label class="color-label" id="away-color-label">Away Color:</label>
+                        <select id="away-color-input" class="away-color-input form-control">
+                            <option class="option-red">Red</option>
+                            <option class="option-orange">Orange</option>
+                            <option class="option-yellow">Yellow</option>
+                            <option class="option-green">Green</option>
+                            <option class="option-blue">Blue</option>
+                            <option class="option-purple">Purple</option>
+                            <option class="option-white">White</option>
+                            <option class="option-gray">Gray</option>
+                            <option class="option-black">Black</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" id="submitTeams" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="body hidden" id="body-game">
+        <div class="col-lg-3 col-top">
+        </div>
+        <div class="col-lg-6 col-top">
+            <div class="row head-row main-row">
+                <div class="col col-md-3 head-col div-btn home-div-btn">
+                    <p class="div-text">Home</button>
+                </div>
+                <div class="col col-md-6 head-col">
+                    <h3>Game Play</h3>
+                </div>
+                <div class="col col-md-3 head-col div-btn other-div-btn" id="resetTeams">
+                    <p class="div-text">Reset</button>
+                </div>
+            </div>
+
+            <div class="row time-row main-row">
+                <div class="col col-md-8 time-col">
+                    <div class="row time-sub-row">
+                        <div class="clock">
+                            <h2 class="time-amount" id="time-amount">10:00</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4 main-row">
+                    <!--<div class="row time-sub-row">-->
+                        <div class="row start-head-row head-row">
+                            <p class="btn start-time-btn">Start</p>
+                        </div>
+                        <div class="row stop-head-row head-row">
+                            <p class="btn stop-time-btn">Stop</p>
+                        </div>
+                        <div class="row reset-head-row head-row">
+                            <p class="btn reset-time-btn">Reset</p>
+                        </div>
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <div class="row score-row main-row">
+                <div class="col col-lg-6 score-col" id="home-score-col">
+                    <div class="row score-sub-row score-sub-top-row">
+                        <h2 class="team-text" id="home-team-text">Texas Quidditch</h2>
+                    </div>
+                    <div class="row score-sub-row score-sub-mid-row">
+                        <h2 class="score-text" id="home-score-text">0</h2>
+                    </div>
+                    <div class="row score-sub-row score-sub-bot-row">
+                        <div class="col col-md-6 score-btn-col">
+                            <button class="btn add-score-btn" id="add-home-btn"> + </button>
+                        </div>
+                        <div class="col col-md-6 score-btn-col">
+                            <button class="btn min-score-btn" id="min-home-btn"> - </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-6 score-col" id="away-score-col">
+                    <div class="row score-sub-row score-sub-top-row">
+                        <h2 class="team-text" id="away-team-text">Lone Star Quidditch Club</h2>
+                    </div>
+                    <div class="row score-sub-row score-sub-mid-row">
+                        <h2 class="score-text" id="away-score-text">0</h2>
+                    </div>
+                    <div class="row score-sub-row score-sub-bot-row">
+                        <div class="col col-md-6 score-btn-col">
+                            <button class="btn add-score-btn" id="add-away-btn"> + </button>
+                        </div>
+                        <div class="col col-md-6 score-btn-col">
+                            <button class="btn min-score-btn" id="min-away-btn"> - </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row release-row main-row" id="release-row">
+                <button class="btn release-btn"></button>
+            </div>
+
+            <div class="row snitch-row main-row" id="snitch-row">
+                <div class="col col-md-3 sub-snitch-col">
+                    <button class="btn home-snitch-btn"></button>
+                </div>
+                <div class="col col-md-6 sub-snitch-col">
+                    <div class="row time-sub-row">
+                        <div class="clock">
+                            <h2 class="time-amount" id="time-amount">5:56</h2>
+                        </div>
+                    </div>
+                    <div class="row snitch-sub-row">
+                        <div class="col col-lg-4 head-col">
+                            <button class="btn start-snitch-time-btn">Start</button>
+                        </div>
+                        <div class="col col-lg-4 head-col">
+                            <button class="btn stop-snitch-time-btn">Stop</button>
+                        </div>
+                        <div class="col col-lg-4 head-col">
+                            <button class="btn reset-snitch-time-btn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-3 sub-snitch-col">
+                    <button class="btn away-snitch-btn"></button>
+                </div>
+            </div>
+
+            <div class="row penalty-row main-row">
+                <div class="col col-md-12 penalty-col">
+                    <div class="row penalty-sub-row">
+                        <div class="clock">
+                            <h2 class="penalty-amount" id="penalty-amount">0:59</h2>
+                        </div>
+                    </div>
+                    <div class="row penalty-sub-row">
+                        <div class="col col-lg-4 head-col">
+                            <button class="btn start-penalty-btn">Start</button>
+                        </div>
+                        <div class="col col-lg-4 head-col">
+                            <button class="btn stop-penalty-btn">Stop</button>
+                        </div>
+                        <div class="col col-lg-4 head-col">
+                            <button class="btn reset-penalty-btn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-top">
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="./../js/game.js"></script>
+  </body>
+</html>
