@@ -92,7 +92,7 @@ app.use(function(req, res, next){
 });
 
 
-app.use('/', routes);
+// app.use('/', routes);
 app.use('/users', users);
 
 require("./routes/html-routes.js")(app);

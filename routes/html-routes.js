@@ -14,26 +14,18 @@ module.exports = function (app) {
 
   // index route loads view.html
 
+
+  app.get("/", function(req, res){
+    res.sendFile(path.join(__dirname+ "./../public/home.html"))
+  });
+
   app.get("/game", function(req, res){
     res.sendFile(path.join(__dirname + "./../public/html/game.html"))
-  })
+  });
 
-//   app.get("/pog", function(req, res){
-//     res.sendFile(path.join(__dirname+ "./../public/html/pog.html"))
-
-//   });
-
-//   app.get("/rps", function(req, res) {
-//     res.sendFile(path.join(__dirname + "./../public/html/rps.html"));
-//   });
-
-//   app.get("/simon", function(req, res) {
-//     res.sendFile(path.join(__dirname + "./../public/html/simon.html"));
-//   });
-
-//   app.get("/card", function(req, res) {
-//     res.sendFile(path.join(__dirname + "./../public/html/blackjackworking.html"));
-//   });
+  app.get("/user/loginpage", function(req, res){
+    res.sendFile(path.join(__dirname + "./../public/html/login.html"))
+  });
 
 
 };
