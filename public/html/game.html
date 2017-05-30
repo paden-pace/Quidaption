@@ -20,49 +20,62 @@
             <h2 class="page-header"> Team Set-up</h2>
         </div>
         <div class="row">
-            <form method="post" action="">
-                <div class="col col-lg-6">
-                    <div class="form-group">
-                        <label>Home Team</label>
-                        <input type="text" class="form-control" name="homeName" id="home-name-input" placeholder="Home Team">
+            <div class="col col-lg-2">
+            </div>
+            <div class="col col-lg-10">
+                <form method="post" action="">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Home Team</label>
+                            <input type="text" class="form-control" name="homeName" id="home-name-input" placeholder="Home Team">
+                        </div>
+                        <div class="form-group">
+                            <label class="color-label" id="home-color-label">Home Color:</label>
+                            <select id="home-color-input" class="home-color-input form-control">
+                                <option class="option-red">Red</option>
+                                <option class="option-orange">Orange</option>
+                                <option class="option-yellow">Yellow</option>
+                                <option class="option-green">Green</option>
+                                <option class="option-blue">Blue</option>
+                                <option class="option-purple">Purple</option>
+                                <option class="option-white">White</option>
+                                <option class="option-gray">Gray</option>
+                                <option class="option-black">Black</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="color-label" id="home-color-label">Home Color:</label>
-                        <select id="home-color-input" class="home-color-input form-control">
-                            <option class="option-red">Red</option>
-                            <option class="option-orange">Orange</option>
-                            <option class="option-yellow">Yellow</option>
-                            <option class="option-green">Green</option>
-                            <option class="option-blue">Blue</option>
-                            <option class="option-purple">Purple</option>
-                            <option class="option-white">White</option>
-                            <option class="option-gray">Gray</option>
-                            <option class="option-black">Black</option>
-                        </select>
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Away Team</label>
+                            <input type="text" id="away-name-input" class="form-control" name="awayName" placeholder="Away Team">
+                        </div>
+                        <div class="form-group">
+                            <label class="color-label" id="away-color-label">Away Color:</label>
+                            <select id="away-color-input" class="away-color-input form-control">
+                                <option class="option-red">Red</option>
+                                <option class="option-orange">Orange</option>
+                                <option class="option-yellow">Yellow</option>
+                                <option class="option-green">Green</option>
+                                <option class="option-blue">Blue</option>
+                                <option class="option-purple">Purple</option>
+                                <option class="option-white">White</option>
+                                <option class="option-gray">Gray</option>
+                                <option class="option-black">Black</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="col col-lg-6">
-                    <div class="form-group">
-                        <label>Away Team</label>
-                        <input type="text" id="away-name-input" class="form-control" name="awayName" placeholder="Away Team">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Seeker Floor</label>
+                            <input type="number" id="seeker-floor-input" class="form-control" name="seekerFloor" placeholder="18">
+                            <p> Minutes</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="color-label" id="away-color-label">Away Color:</label>
-                        <select id="away-color-input" class="away-color-input form-control">
-                            <option class="option-red">Red</option>
-                            <option class="option-orange">Orange</option>
-                            <option class="option-yellow">Yellow</option>
-                            <option class="option-green">Green</option>
-                            <option class="option-blue">Blue</option>
-                            <option class="option-purple">Purple</option>
-                            <option class="option-white">White</option>
-                            <option class="option-gray">Gray</option>
-                            <option class="option-black">Black</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" id="submitTeams" class="btn btn-default">Submit</button>
-            </form>
+                    <button type="submit" id="submitTeams" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+            <div class="col col-lg-2">
+            </div>
         </div>
     </div>
 
@@ -72,7 +85,9 @@
         <div class="col-lg-6 col-top">
             <div class="row head-row main-row">
                 <div class="col col-md-3 head-col div-btn home-div-btn">
-                    <p class="div-text">Home</button>
+                    <a href="/">
+                        <p class="div-text">Home</p>
+                    </a>
                 </div>
                 <div class="col col-md-6 head-col">
                     <h3>Game Play</h3>
@@ -86,19 +101,19 @@
                 <div class="col col-md-8 time-col">
                     <div class="row time-sub-row">
                         <div class="clock">
-                            <h2 class="time-amount" id="time-amount">10:00</h2>
+                            <h2 class="time-amount" id="main-time">00:00</h2>
                         </div>
                     </div>
                 </div>
                 <div class="col col-md-4 main-row">
                     <!--<div class="row time-sub-row">-->
-                        <div class="row start-head-row head-row">
+                        <div class="row start-head-row head-row" id="main-start">
                             <p class="btn start-time-btn">Start</p>
                         </div>
-                        <div class="row stop-head-row head-row">
+                        <div class="row stop-head-row head-row" id="main-stop">
                             <p class="btn stop-time-btn">Stop</p>
                         </div>
-                        <div class="row reset-head-row head-row">
+                        <div class="row reset-head-row head-row" id="main-reset">
                             <p class="btn reset-time-btn">Reset</p>
                         </div>
                     <!--</div>-->
@@ -151,7 +166,7 @@
                 <div class="col col-md-6 sub-snitch-col">
                     <div class="row time-sub-row">
                         <div class="clock">
-                            <h2 class="time-amount" id="time-amount">5:56</h2>
+                            <h2 class="time-amount" id="seeker-time">00:00</h2>
                         </div>
                     </div>
                     <div class="row snitch-sub-row">
