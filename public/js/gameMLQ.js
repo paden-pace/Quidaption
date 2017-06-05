@@ -1,47 +1,36 @@
 
 
-// ===============  To Do List:  ===============   
-
-// Add a snitch caugtht function that can automaticlaly load an overtime function
-        // It will also say who one the game with sntich astreck after
-
-
-
-
-
-
-// =============================================   
-// =============================================   
 
 var homeScore = 0;
 var awayScore = 0;
-var homeName;
-var awayName;
-var homeColor;
-var awayColor;
+var homeTeam;
+var awayTeam;
+var homeTeamColor;
+var awayTeamColor;
+ 
+var allTeams = "AustinOutlaws BostonNightRiders CleavelandRiff DetroitInnovators IndianapolisIntensity KansasCityStampede LeagueCityLegends LosAngelesGuardians NewOrleansCurse NewYorkTitans OttawaBlackBears PhoenixSol RochesterWhiteout SaltLakeCityHive SanFranciscoArgonauts WashingtonAdmirals";
 
-var allColors = "Red Orange Yellow Green Blue Purple White Gray Black"
+
 
 $('#submitTeams').on('click', function () {
     console.log('submit clicked!');
-    homeName = $("#home-name-input").val().trim();
-    homeColor = $("#home-color-input").val().trim();
-    $("#home-team-text").html(homeName)
-    $("#home-score-col").addClass(homeColor);
-    awayName = $("#away-name-input").val().trim();
-    awayColor = $("#away-color-input").val().trim();
-    $("#away-score-col").addClass(awayColor);
-    $("#away-team-text").html(awayName)
+    homeTeam = $("#home-team-input").val().trim();
+    $("#home-team-text").html(homeTeam)
+    homeTeamColor = homeTeam.replace(/\s+/g, '');
+    $("#home-score-col").addClass(homeTeamColor);
+    awayTeam = $("#away-team-input").val().trim();
+    $("#away-team-text").html(awayTeam)
+    awayTeamColor = awayTeam.replace(/\s+/g, '');
+    $("#away-score-col").addClass(awayTeamColor);
     $('#body-set').addClass('hidden');
     $('#body-game').removeClass('hidden');
-
     return false;
 })
 
 $('#resetTeams').on('click', function () {
     console.log('reset clicked!');
-    $("#home-score-col").removeClass(allColors);
-    $("#away-score-col").removeClass(allColors);
+    $("#home-score-col").removeClass(allTeams);
+    $("#away-score-col").removeClass(allTeams);
     $('#body-game').addClass('hidden');
     $('#body-set').removeClass('hidden');
     return false;
@@ -78,7 +67,7 @@ $("#min-away-btn").on('click', function () {
 
 
 $(document).ready(function () {
-     console.log("game.js connected.")
+     console.log("gameMLQ.js loaded");
 });
 
 

@@ -23,6 +23,10 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname + "./../public/html/game.html"))
   });
 
+  app.get("/gameMLQ", function(req, res){
+    res.sendFile(path.join(__dirname + "./../public/html/gameMLQ.html"))
+  });
+
   app.get("/user/loginpage", function(req, res){
     res.sendFile(path.join(__dirname + "./../public/html/login.html"))
   });

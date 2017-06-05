@@ -12,6 +12,7 @@
 
     <!-- Local Stylesheet -->
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/styleMLQ.css">
 
   </head>
   <body>
@@ -21,7 +22,6 @@
             <ul class="nav nav-pills pull-right">
                 <li role="presentation" id="home-tab" class="active"><a href="/">Home</a></li>
                 <li role="presentation" id="game-tab" class="active"><a href="/game">Game</a></li>
-                <li role="presentation" id="gameMLQ-tab" class="active"><a href="/gameMLQ">Game MLQ</a></li>
                 <li role="presentation" id="login-tab" class="active"><a href="/users/loginpage">Log-in</a></li>
                 <li role="presentation" id="register-tab" class="active"><a href="/users/loginpage">Register</a></li>
                 <li role="presentation" id="logout-tab" ><a href="/users/logout">Log-out</a></li>
@@ -38,41 +38,47 @@
                 <form method="post" action="">
                     <div class="row">
                         <div class="form-group">
-                            <label>Home Team</label>
-                            <input type="text" class="form-control" name="homeName" id="home-name-input" placeholder="Home Team">
-                        </div>
-                        <div class="form-group">
-                            <label class="color-label" id="home-color-label">Home Color:</label>
-                            <select id="home-color-input" class="home-color-input form-control">
-                                <option class="option-red">Red</option>
-                                <option class="option-orange">Orange</option>
-                                <option class="option-yellow">Yellow</option>
-                                <option class="option-green">Green</option>
-                                <option class="option-blue">Blue</option>
-                                <option class="option-purple">Purple</option>
-                                <option class="option-white">White</option>
-                                <option class="option-gray">Gray</option>
-                                <option class="option-black">Black</option>
+                            <labelclass= class="team-label" id="home-team-label">Home Team</label>
+                            <select id="home-team-input" class="home-team-input form-control">
+                                <option class="option-austin">Austin Outlaws</option>
+                                <option class="option-boston">Boston Night Riders</option>
+                                <option class="option-cleveland">Cleaveland Riff</option>
+                                <option class="option-detroit">Detroit Innovators</option>
+                                <option class="option-indianapolis">Indianapolis Intensity</option>
+                                <option class="option-kansasCity">Kansas City Stampede</option>   
+                                <option class="option-leagueCity">League City Legends</option>
+                                <option class="option-losAngeles">Los Angeles Guardians</option>
+                                <option class="option-newOrleans">New Orleans Curse</option>
+                                <option class="option-newYork">New York Titans</option>
+                                <option class="option-ottawa">Ottawa Black Bears</option>
+                                <option class="option-phoenix">Phoenix Sol</option>
+                                <option class="option-rochester">Rochester Whiteout</option>
+                                <option class="option-saltLakeCity">Salt Lake City Hive</option>
+                                <option class="option-sanFrancisco">San Francisco Argonauts</option>
+                                <option class="option-washington">Washington Admirals</option>                             
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group">
-                            <label>Away Team</label>
-                            <input type="text" id="away-name-input" class="form-control" name="awayName" placeholder="Away Team">
-                        </div>
-                        <div class="form-group">
-                            <label class="color-label" id="away-color-label">Away Color:</label>
-                            <select id="away-color-input" class="away-color-input form-control">
-                                <option class="option-red">Red</option>
-                                <option class="option-orange">Orange</option>
-                                <option class="option-yellow">Yellow</option>
-                                <option class="option-green">Green</option>
-                                <option class="option-blue">Blue</option>
-                                <option class="option-purple">Purple</option>
-                                <option class="option-white">White</option>
-                                <option class="option-gray">Gray</option>
-                                <option class="option-black">Black</option>
+                            <label class="color-label" id="away-team-label">Away Team</label>
+                            <select id="away-team-input" class="away-team-input form-control">
+                                <option class="option-austin">Austin Outlaws</option>
+                                <option class="option-boston">Boston Night Riders</option>
+                                <option class="option-cleveland">Cleaveland Riff</option>
+                                <option class="option-detroit">Detroit Innovators</option>
+                                <option class="option-indianapolis">Indianapolis Intensity</option>
+                                <option class="option-kansasCity">Kansas City Stampede</option>   
+                                <option class="option-leagueCity">League City Legends</option>
+                                <option class="option-losAngeles">Los Angeles Guardians</option>
+                                <option class="option-newOrleans">New Orleans Curse</option>
+                                <option class="option-newYork">New York Titans</option>
+                                <option class="option-ottawa">Ottawa Black Bears</option>
+                                <option class="option-phoenix">Phoenix Sol</option>
+                                <option class="option-rochester">Rochester Whiteout</option>
+                                <option class="option-saltLakeCity">Salt Lake City Hive</option>
+                                <option class="option-sanFrancisco">San Francisco Argonauts</option>
+                                <option class="option-washington">Washington Admirals</option> 
                             </select>
                         </div>
                     </div>
@@ -224,6 +230,6 @@
 
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="./../js/game.js"></script>
+    <script src="./../js/gameMLQ.js"></script>
   </body>
 </html>

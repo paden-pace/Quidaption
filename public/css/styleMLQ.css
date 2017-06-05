@@ -1,0 +1,143 @@
+
+
+/*
+MLQ Team Color Presets
+
+Team:AustinOutlaws 
+background-color: #3a9cd5
+color: #000000
+
+Team:BostonNightRiders 
+background-color: #391a86
+color: #c5d92e
+
+Team:CleavelandRiff 
+background-color: #2f225c
+color: #818181
+
+Team:DetroitInnovators 
+background-color: #92cdc8
+color: #1d1d1d
+
+Team:IndianapolisIntensity 
+background-color: #ef6831
+color: #000809;
+
+Team:KansasCityStampede 
+background-color: #ab232e
+color: #ebd182
+
+Team:LeagueCityLegends 
+background-color: #ffffff
+color: #0949a5
+
+Team:LosAngelesGuardians 
+background-color: #b2cdf5
+color: #676767
+
+Team:NewOrleansCurse 
+background-color: #4a2681
+color: #f5af38
+
+Team:NewYorkTitans 
+background-color: #c12731
+color: #fecc16
+
+Team:OttawaBlackBears 
+background-color: #060709
+color: #9cc9eb
+
+Team:PhoenixSol 
+background-color: #a70c37
+color: #ffffff
+
+Team:RochesterWhiteout 
+background-color: #3d6f48
+color: #bdbec0
+
+Team:SaltLakeCityHive 
+background-color: #fee033
+color: #000000
+
+Team:SanFranciscoArgonauts 
+background-color: #298892
+color: #e8b94f
+
+Team:WashingtonAdmirals 
+background-color: #273671
+color: #e7d53f
+*/
+
+
+
+
+.score-col.AustinOutlaws 
+{
+    background-color: #3a9cd5;
+    color: #000000;
+}
+.score-col.BostonNightRiders 
+{
+    background-color: #391a86;
+    color: #c5d92e;
+}
+.score-col.CleavelandRiff 
+{
+    background-color: #2f225c;
+    color: #818181;
+}
+.score-col.DetroitInnovators 
+{
+    background-color: #92cdc8;
+    color: #1d1d1d;
+}
+.score-col.IndianapolisIntensity 
+{
+    background-color: #ef6831;
+    color: #000809;
+}
+.score-col.KansasCityStampede 
+{
+    background-color:#ab232e;
+    color: #ebd182;
+}
+.score-col.LeagueCityLegends {
+    background-color: #ffffff;
+    color: #0949a5;
+}
+.score-col.LosAngelesGuardians {
+    background-color: #b2cdf5;
+    color: #676767
+}
+.score-col.NewOrleansCurse {
+    background-color: #4a2681;
+    color: #f5af38
+}
+.score-col.NewYorkTitans {
+    background-color: #c12731;
+    color: #fecc16;
+}
+.score-col.OttawaBlackBears {
+    background-color: #060709;
+    color: #9cc9eb
+}
+.score-col.PhoenixSol {
+    background-color: #a70c37;
+    color: #ffffff;
+}
+.score-col.RochesterWhiteout {
+    background-color:#3d6f48;
+    color: #bdbec0;
+}
+.score-col.SaltLakeCityHive {
+    background-color: #fee033;
+    color: #000000;
+}
+.score-col.SanFranciscoArgonauts {
+    background-color: #298892;
+    color: #e8b94f;
+}
+.score-col.WashingtonAdmirals {
+    background-color: #273671;
+    color: #e7d53f;
+}
