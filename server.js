@@ -10,7 +10,7 @@ var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/quidapp');
+//mongoose.connect('mongodb://localhost/quidapp');
 var db = mongoose.connection;
 
 
@@ -26,10 +26,10 @@ var users = require('./routes/users');
 // Initialize Express
 var app = express();
 
-// view engine for handlebars
-app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs({defaultLayout: 'layout'}));
-app.set('view engine', 'handlebars');
+// view engine for HANDLEBARS
+// app.set('views', path.join(__dirname, 'views'));
+// app.engine('handlebars', exphbs({defaultLayout: 'layout'}));
+// app.set('view engine', 'handlebars');
 
 
 // BodyParser and Middleware 
@@ -93,7 +93,7 @@ app.use(function(req, res, next){
 
 
 // app.use('/', routes);
-app.use('/users', users);
+//app.use('/users', users);
 
 require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
@@ -102,17 +102,18 @@ require("./routes/html-routes.js")(app);
 // =========  Database configuration with mongoose ===============
 // ---------  define local MongoDB URI ----------
 
-//var databaseUri = 'mongodb://heroku_7787qsks:gp9jm8tkki1fks0g95rnac6of2@ds147551.mlab.com:47551/heroku_7787qsks';
 
-// if (process.env.MONGODB_URI){
-//     // this executes if this is being executed in heroku app
-//     mongoose.connect(process.env.MONGODB_URI);
-// } else {
-//     // this ececutes if this is being executed on local machine
-//     mongoose.connect(databaseUri);
-// }
+var localMongo = "mongodb://localhost/quidapp"
+var MONGODB_URI = "mongodb://<dbuser>:<dbpassword>@ds125481.mlab.com:25481/heroku_0p3792pt"
 
-// mongoose.connect('mongodb://localhost/quidapp');
+if (process.env.MONGODB_URI){
+    // this executes if this is being executed in heroku app
+    mongoose.connect(process.env.MONGODB_URI);
+} else {
+    // this ececutes if this is being executed on local machine
+    mongoose.connect(localMongo);
+}
+
 
 // // =========  End databse configuration  ================
 
@@ -129,8 +130,9 @@ require("./routes/html-routes.js")(app);
 // });
 
 
-app.set('port', (process.env.PORT || 8020));
 
-app.listen(app.get('port'), function(){
-    console.log("Server sstarted on port " + app.get('port'));
+var PORT = process.env.PORT || 8020;
+// Listener
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
 });
