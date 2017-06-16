@@ -27,12 +27,16 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname + "./../public/html/gameMLQ.html"))
   });
 
+  app.get("/tournaments", function(req, res){
+    res.sendFile(path.join(__dirname + "./../public/html/tournaments.html"))
+  });
+
   app.get("/login", function(req, res){
     res.sendFile(path.join(__dirname + "./../public/html/login.html"))
   });
 
-  app.get("/tournaments", function(req, res){
-    res.sendFile(path.join(__dirname + "./../public/html/tournaments.html"))
+  app.get("/register", function(req, res){
+    res.sendFile(path.join(__dirname + "./../public/html/register.html"))
   });
 
 

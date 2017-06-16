@@ -1,19 +1,4 @@
 
-// Unzip and open the folder that was slacked out. Run npm install.
-// Navigate to the Panel.js file. Here we want to write some logic in order 
-  // to render the following inside the panel-body div inside of the render method:
-
-// When this.state.selected.value is equal to "SHOW_LOREM", 
-  // render a paragraph of lorem ipsum (or any text of your choice).
-// When this.state.selected.value is equal to "SHOW_CAT" 
-  // render an image of a cat (anything you can find online).
-// When this.state.selected.value is equal to "SHOW_NOTHING", 
-  // make sure nothing is rendered inside the panel-body div.
-
-// Important: this.state.selected changes whenever the dropdown is changed.
-// There are multiple ways to accomplish this, take a minute to checkout Facebook's docs on conditional rendering in React:
-
-
 
 
 
@@ -25,14 +10,17 @@ import Dropdown from "./Dropdown";
 // Defining a list of dropwdown options here
 const dropdownOptions = [
   {
-    text: "Show Lorem",
-    value: "SHOW_LOREM"
+    text: "All Tournaments",
+    value: "All"
   }, {
-    text: "Show Cat Picture",
-    value: "SHOW_CAT"
+    text: "MLQ Tournaments",
+    value: "MLQ"
   }, {
-    text: "Hide Everything",
-    value: "SHOW_NONE"
+    text: "USQ Tournaments",
+    value: "USQ"
+  }, {
+    text: "Other Tournaments",
+    value: "Other"
   }
 ];
 
@@ -44,8 +32,8 @@ class Panel extends Component {
     this.state = {
       dropdownOptions,
       selected: {
-        text: "Show Lorem",
-        value: "SHOW_LOREM"
+        text: "All Tournaments",
+        value: "All"
       }
     };
     // Binding handleDropdownSelect to our component since we'll be passing
@@ -61,12 +49,26 @@ class Panel extends Component {
 
   panelDisplay(option){
     switch(option){
-      case "SHOW_CAT":
-        return (<div>Pretend it's a cat</div>);
-      case "SHOW_LOREM":
-        return (<div>Pretend it's some Lorem</div>);
+      case "All":
+        return (
+          <div>All Tournaments</div>
+        );
+      case "MLQ":
+        return (
+          <div>MLQ Tournaments</div>
+        );
+      case "USQ":
+        return (
+          <div>USQ Tournaments:</div>
+        );
+      case "Other":
+        return (
+          <div>Other Tournaments:</div>
+        );
       default: 
-        return (<div>You saw nothing</div>)
+        return (
+          <div>Choose which tournaments you would like to see.</div>
+        );
     };
     // if (this.state.selected == )
     // function UserGreeting(props) {

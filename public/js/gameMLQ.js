@@ -91,7 +91,7 @@ var intervalId;
 // Our stopwatch object
 var stopwatch = {
 
-  time: 0,
+  time: -60,
 
   reset: function() {
     $("#main-time").html("00:00");
