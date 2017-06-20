@@ -5,6 +5,14 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var mongoose = require('mongoose');
+var bcrypt = require('bcryptjs');
+
+mongoose.connect('mongodb://localhost/rollinit');
+var db = mongoose.connection;
+
+var Tournament = require('../models/tournament');
+var User = require('../models/user');
 
 // Routes
 // =============================================================
@@ -16,7 +24,14 @@ module.exports = function (app) {
 
 
   app.get("/", function(req, res){
-    res.sendFile(path.join(__dirname+ "./../public/home.html"))
+    if(req.user){
+      console.log("yes user")
+      console.log(req.user)
+      res.sendFile(path.join(__dirname+ "./../public/home.html"))
+    } else {
+      console.log("no user")
+      res.sendFile(path.join(__dirname+ "./../public/home.html"))
+    }
   });
 
   app.get("/game", function(req, res){
@@ -29,6 +44,10 @@ module.exports = function (app) {
 
   app.get("/tournaments", function(req, res){
     res.sendFile(path.join(__dirname + "./../public/html/tournaments.html"))
+  });
+
+  app.get("/profile", function(req, res){
+    res.sendFile(path.join(__dirname + "./../public/html/profile.html"))
   });
 
   app.get("/login", function(req, res){
