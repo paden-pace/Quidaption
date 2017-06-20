@@ -49,6 +49,18 @@ h3, .div-text{
     background-color: #000000;
 }
 
+.main-time-amount {
+    color: #79d92e;
+}
+
+.snitch-time-amount {
+    color: #fecc16;
+}
+
+.penalty-time-amount {
+    color: #d4272b;
+}
+
 .stop-head-row {
     background: red;
 }

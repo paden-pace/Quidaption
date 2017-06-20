@@ -14,8 +14,9 @@
 
 <body>
 
-  <div class="container">
-      <div class="header clearfix">
+<div class="container">
+
+    <div class="header clearfix">
         <nav class="navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -35,44 +36,31 @@
             </div>
         </nav>
     </div>
-	
-	<div class="container tournaments-container" id="tournaments-container">
-		<h2 class="page-header"> Tournaments </h2>
 
-		<form method="post" action="/tournaments/add">
-			<div class="form-group">
-				<label>Name</label>
-				<input type="text" class="form-control" placeholder="The Southwest Tournament" name="name">
-			</div>
-			<div class="form-group">
-				<label>League</label>
-				<input type="text" class="form-control" placeholder="IQA" name="league">
-			</div>
-			<div class="form-group">
-				<label>Date</label>
-				<input type="text" class="form-control" placeholder="June 20, 2017" name="date">
-			</div>
-			<div class="form-group">
-				<label>Location</label>
-				<input type="text" class="form-control" placeholder="422 E 6th St, Austin, TX 78701" name="location">
-			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
-	</div>
-
-
-
-	<!-- This is where React will deploy the contents it generates -->  
-  <!--<div id="app"></div>-->
-
-	<!-- All of our JS code will be transpiled into this bundle.js file -->
-	<!--<script src="bundle.js"></script>-->
-	
-      <footer class="footer">
-        <p>© 2017 Quidaption</p>
-      </footer>
-
+    <div class="body body-div" id="profile-body">
+        <h2 class="page-header">User Profile</h2>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="project-title">User Info</h3>
+            </div>
+            <div class="panel-body">
+                <div clas ="row panel-row name-row">
+                    <h4>Player Name:</h4>
+                    <h5 class="player-name">Player's name goes here</h5>
+                </div>
+                <div clas ="row panel-row team-row">
+                    <h4>Team Name:</h4>
+                    <h5 class="player-name">Player's team goes here</h5>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <footer class="footer">
+    <p>© 2017 Quidaption</p>
+    </footer>
+
+</div>
 
 </body>
 

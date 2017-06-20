@@ -1,3 +1,7 @@
+
+
+
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -18,8 +22,9 @@ var db = mongoose.connection;
 //var Player = require("./models/Player.js");
 //var Tournament = require("./models/Tournament.js");
 
-var routes = require('./routes/index.js');
+//var routes = require('./routes/index.js');
 var users = require('./routes/users');
+var tournaments = require('./routes/tournaments');
 
 // var request = require('request');
 
@@ -92,9 +97,11 @@ app.use(function(req, res, next){
 });
 
 
-// app.use('/', routes);
-//app.use('/users', users);
 
+var users = require('./routes/users');
+app.use('/users', users);
+var tournaments = require('./routes/tournaments');
+app.use('/tournaments', tournaments);
 require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
 

@@ -16,16 +16,23 @@
 
   <div class="container">
       <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" id="home-tab" class="active"><a href="/">Home</a></li>
-            <li role="presentation" id="game-tab" class="active"><a href="/game">Game</a></li>
-            <li role="presentation" id="gameMLQ-tab" class="active"><a href="/gameMLQ">Game MLQ</a></li>
-            <li role="presentation" id="tournaments-tab" class="active"><a href="/tournaments">Tournaments</a></li>
-            <li role="presentation" id="login-tab" class="active"><a href="/login">Log-in</a></li>
-            <li role="presentation" id="register-tab" class="active"><a href="/users/loginpage">Register</a></li>
-            <li role="presentation" id="logout-tab" ><a href="/users/logout">Log-out</a></li>
-          </ul>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <h2>QA</h2>
+                    </a>
+                </div>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" id="home-tab" class="active"><a href="/">Home</a></li>
+                    <li role="presentation" id="game-tab" class="active"><a href="/game">Game</a></li>
+                    <li role="presentation" id="tournaments-tab" class="active"><a href="/tournaments">Tournaments</a></li>
+                    <li role="presentation" id="profile-tab" class="active"><a href="/profile">Profile</a></li>
+                    <li role="presentation" id="login-tab" class="active"><a href="/login">Log-in</a></li>
+                    <li role="presentation" id="register-tab" class="active"><a href="/register">Register</a></li>
+                    <li role="presentation" id="logout-tab" ><a href="/users/logout">Log-out</a></li>
+                </ul>
+            </div>
         </nav>
     </div>
 
@@ -45,32 +52,12 @@
     </form>
 </div>
 
+      <footer class="footer">
+        <p>© 2017 Quidaption</p>
+      </footer>
 
-<div class="body body-div" id="register-body">
-    <h2 class="page-header"> Register </h2>
-    <div class="alert alert-danger"> 
     </div>
-    <form method="post" action="/users/register">
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" placeholder="Name" name="name">
-        </div>
-        <div class="form-group">
-            <label>Username</label>
-            <input type="text" class="form-control" placeholder="Username" name="username">
-        </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" placeholder="Email" name="email">
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" placeholder="Password" name="password">
-        </div>
-        <div class="form-group">
-            <label>Confirm Password</label>
-            <input type="password" class="form-control" placeholder="Password" name="password2">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-</div>
+
+</body>
+
+</html>

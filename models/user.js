@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
+var Schema = mongoose.Schema;
 
-// mongoose.connect('mongodb://localhost/quidapp');
-
-// var db = mongoose.connection;
+mongoose.connect('mongodb://localhost/quidapp');
+var db = mongoose.connection;
 
 var UserSchema = mongoose.Schema({
     username: {
@@ -19,6 +19,12 @@ var UserSchema = mongoose.Schema({
     name: {
         type: String,
     },
+    tournaments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Tournament"
+        }
+    ]
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);
