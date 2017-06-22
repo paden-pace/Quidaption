@@ -24,6 +24,12 @@ var UserSchema = mongoose.Schema({
             type: Schema.Types.ObjectId,
             ref: "Tournament"
         }
+    ],
+    teams: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Team"
+        }
     ]
 });
 

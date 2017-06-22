@@ -61,7 +61,7 @@ module.exports.createTeam = function(newTeam, callback){
     });
 }
 
-module.exports.getTeamByName = function(username, callback){
+module.exports.getTeamByName = function(name, callback){
     var query = {name: name};
     Team.findOne(query, callback);
 }
