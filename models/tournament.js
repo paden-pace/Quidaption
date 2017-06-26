@@ -36,7 +36,12 @@ var TournamentSchema = mongoose.Schema({
 var Tournament = module.exports = mongoose.model('Tournament', TournamentSchema);
 
 module.exports.createTournament = function(newTournament, callback){
-   newTournament.save(callback);
+    bcrypt.genSalt(10, function(err, salt) {
+    bcrypt.hash(newTournament.password, salt, function(err, hash) {
+            newTournament.password = hash;
+            newTournament.save(callback);
+        });
+    });
 }
 
 

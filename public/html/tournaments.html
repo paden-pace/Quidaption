@@ -29,6 +29,7 @@
                     <li role="presentation" id="tournaments-tab" class="active"><a href="/tournaments">Tournaments</a></li>
                     <li role="presentation" id="profile-tab" class="active"><a href="/profile">Profile</a></li>
                     <li role="presentation" id="team-tab" class="active"><a href="/teams">Teams</a></li>
+                    <li role="presentation" id="team-tab" class="active"><a href="/links">Links</a></li>
                     <li role="presentation" id="login-tab" class="active"><a href="/login">Log-in</a></li>
                     <li role="presentation" id="register-tab" class="active"><a href="/register">Register</a></li>
                     <li role="presentation" id="logout-tab" ><a href="/users/logout">Log-out</a></li>
@@ -45,10 +46,26 @@
 				<label>Name</label>
 				<input type="text" class="form-control" placeholder="The Southwest Tournament" name="name">
 			</div>
-			<div class="form-group">
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="Password" name="password">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" placeholder="Password" name="password2">
+            </div>
+            <div class="form-group">
+                <label>League</label>
+                <select class="form-control" name="league">
+                    <option value="IQA">IQA</option>
+                    <option value="MLQ">MLQ</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Other">Other</option>
+            </div>
+			<!--<div class="form-group">
 				<label>League</label>
 				<input type="text" class="form-control" placeholder="IQA" name="league">
-			</div>
+			</div>-->
 			<div class="form-group">
 				<label>Date</label>
 				<input type="text" class="form-control" placeholder="June 20, 2017" name="date">
@@ -64,10 +81,10 @@
 
 
 	<!-- This is where React will deploy the contents it generates -->  
-  <!--<div id="app"></div>-->
+  <div id="app"></div>
 
 	<!-- All of our JS code will be transpiled into this bundle.js file -->
-	<!--<script src="bundle.js"></script>-->
+	<script src="bundle.js"></script>
 	
       <footer class="footer">
         <p>© 2017 Quidaption</p>

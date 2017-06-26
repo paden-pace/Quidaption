@@ -58,6 +58,10 @@ module.exports = function (app) {
      res.sendFile(path.join(__dirname + "./../public/html/teams.html"))
    });
 
+   app.get("/links", function(req, res){
+     res.sendFile(path.join(__dirname + "./../public/html/links.html"))
+   });
+
   app.get("/register", function(req, res){
     res.sendFile(path.join(__dirname + "./../public/html/register.html"))
   });

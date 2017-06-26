@@ -25,6 +25,7 @@ var db = mongoose.connection;
 //var routes = require('./routes/index.js');
 var users = require('./routes/users');
 var tournaments = require('./routes/tournaments');
+var teams = require('./routes/teams');
 
 // var request = require('request');
 
@@ -102,6 +103,8 @@ var users = require('./routes/users');
 app.use('/users', users);
 var tournaments = require('./routes/tournaments');
 app.use('/tournaments', tournaments);
+var teams = require('./routes/teams');
+app.use('/teams', teams);
 require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
 
