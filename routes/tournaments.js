@@ -42,7 +42,14 @@ router.post('/add', function(req,res){
     var userID = req.user._id;
     console.log("userID1");
     console.log(userID);
+
+    console.log('req.body');
+    console.log(req.body);
+
+    
     var name = req.body.name;
+    var password = req.body.password;
+    var password2 = req.body.password2;
     var league = req.body.league;
     var date = req.body.date;
     var location = req.body.location;
@@ -50,9 +57,12 @@ router.post('/add', function(req,res){
     console.log(req.body);
 
     req.checkBody('name', 'Name is required').notEmpty();
+    req.checkBody('password', 'Password is required').notEmpty();
+    req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
     req.checkBody('league', 'League is required').notEmpty();
     req.checkBody('date', 'Date is required').notEmpty();
     req.checkBody('location', 'Location is required').notEmpty();
+    
 
     var errors = req.validationErrors();
     if(errors){
@@ -64,6 +74,7 @@ router.post('/add', function(req,res){
     } else {
         var newTournament = new Tournament({
             name: name, 
+            password: password,
             league: league,
             date: date,
             location: location

@@ -21,6 +21,12 @@ var Team = require('../models/team');
 
 // Register Team
 router.post('/register', function(req,res){
+    console.log('req');
+    console.log(req);
+    var userID = req.user._id;
+    console.log("userID1");
+    console.log(userID);
+    
     var name = req.body.name;
     var email = req.body.email;
     var password = req.body.password;
@@ -52,9 +58,28 @@ router.post('/register', function(req,res){
             password: password,
         });
 
-        Team.createTeam(newTeam, function(err, user){
-            if(err) throw err;
-            console.log(team);
+        Team.createTeam(newTeam, function(err, team){
+            console.log("team")
+            console.log(team)
+            if (err) {
+                console.log(err);
+                }
+                // Otherwise
+            else {
+                console.log("userID2");
+                console.log(userID);
+                User.findOneAndUpdate({ "_id": userID }, {$push: {"teams": team}})
+                // Execute the above query
+                .exec(function(err, doc) {
+                    if (err) {
+                        console.log(err);
+                    }
+                    else {
+                        //res.send(doc);
+                        //res.redirect('/tournaments');
+                    }
+                });
+            }
         });
 
         //req.flash('success_msg', "You are registered and can now log-in");
@@ -64,27 +89,27 @@ router.post('/register', function(req,res){
 });
 
 
-passport.use(new LocalStrategy(
-  function(name, password, done) {
-    Team.getTeamByName(name, function(err, team){
-        if(err) throw err;
-        if(!team){
-            console.log("Not a user"); 
-            //return done(null, false, {message: 'Unknown User'});
-        }
+// passport.use(new LocalStrategy(
+//   function(name, password, done) {
+//     Team.getTeamByName(name, function(err, team){
+//         if(err) throw err;
+//         if(!team){
+//             console.log("Not a user"); 
+//             //return done(null, false, {message: 'Unknown User'});
+//         }
 
-        Team.comparePassword(password, team.password, function(err, isMatch){
-            if(err) throw err;
-            if(isMatch){
-                return done(null, team);
-            } else {
-                console.log("Not the right password.")
-                //return done(null, false, {message: 'Invalid password.'});
-            }
-        });
-    });
-  }
-));
+//         Team.comparePassword(password, team.password, function(err, isMatch){
+//             if(err) throw err;
+//             if(isMatch){
+//                 return done(null, team);
+//             } else {
+//                 console.log("Not the right password.")
+//                 //return done(null, false, {message: 'Invalid password.'});
+//             }
+//         });
+//     });
+//   }
+// ));
 
 module.exports = router;
 

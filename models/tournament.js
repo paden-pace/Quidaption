@@ -10,6 +10,12 @@ var TournamentSchema = mongoose.Schema({
     name: {
         type: String,
     },
+    email: {
+        type: String,
+    },
+    password: {
+        type: String,
+    },
     league: {
         type: String,
     },
@@ -22,7 +28,7 @@ var TournamentSchema = mongoose.Schema({
     registeredTeams: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Tournament"
+            ref: "Team"
         }
     ]
 });
@@ -30,9 +36,21 @@ var TournamentSchema = mongoose.Schema({
 var Tournament = module.exports = mongoose.model('Tournament', TournamentSchema);
 
 module.exports.createTournament = function(newTournament, callback){
-   newTournament.save(callback);
+    bcrypt.genSalt(10, function(err, salt) {
+    bcrypt.hash(newTournament.password, salt, function(err, hash) {
+            newTournament.password = hash;
+            newTournament.save(callback);
+        });
+    });
 }
 
+
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+    bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+        if(err) throw err;
+        callback(null, isMatch);
+    });
+}
 module.exports.getTournamentByName = function(name, callback){
     var query = {name: name};
     Tournament.findOne(query, callback);
