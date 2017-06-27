@@ -10,6 +10,12 @@
 
     <link rel="stylesheet" href="/css/style.css"/>
 
+    <!-- JQuery Link -->
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+     <!--Local Javscript -->
+    <script type="text/javascript" src="/js/tournament-func.js"></script>
+
 </head>
 
 <body>
@@ -62,10 +68,6 @@
                     <option value="Fantasy">Fantasy</option>
                     <option value="Other">Other</option>
             </div>
-			<!--<div class="form-group">
-				<label>League</label>
-				<input type="text" class="form-control" placeholder="IQA" name="league">
-			</div>-->
 			<div class="form-group">
 				<label>Date</label>
 				<input type="text" class="form-control" placeholder="June 20, 2017" name="date">
@@ -78,13 +80,18 @@
 		</form>
 	</div>
 
-
+    <div class="current-tournaments-all">
+		<h2> Current Tournaments: </h2>
+		<div class="current-tournaments subtitle" id="current-tournaments">
+			<h4>Looks like you currently have no tournaments.</h4>
+		</div>
+	</div>
 
 	<!-- This is where React will deploy the contents it generates -->  
-  <div id="app"></div>
+    <!--<div id="app"></div>-->
 
 	<!-- All of our JS code will be transpiled into this bundle.js file -->
-	<script src="bundle.js"></script>
+	<!--<script src="bundle.js"></script>-->
 	
       <footer class="footer">
         <p>© 2017 Quidaption</p>
