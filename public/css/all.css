@@ -1,0 +1,65 @@
+
+
+/* ==================================
+Colors: 
+
+Dark Purple: #3c1c3d
+Dark Flat Pink: #b45b5c
+Light Gray Purple: #b45b5c
+Light Tangerine: #b45b5c
+Faded Tangerine: #f18e65
+Faded Light Gold: #b45b5c
+Darker Gray Blue: #313445
+Medium Gray Blue: #464d5f
+Lightest Gray Blue: #67718a
+=========================================*/
+
+
+
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: transparent;
+    color: #3c1c3d;
+    font-weight: bolder;
+}
+
+.nav>li:focus, .nav>li:hover {
+    background-color: #ffffff;
+    font-weight: bolder;
+    opacity: .4;
+}
+
+.nav>li>a {
+    color: #ffffff;
+    font-family: 'Lato';
+}
+
+.navbar-brand>h2{
+    color: #ffffff;
+    font-family: 'Lato';
+}
+
+body {
+    background: #3c1c3d; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #3c1c3d, #b45b5c); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #3c1c3d, #b45b5c); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #3c1c3d, #b45b5c); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #3c1c3d, #b45b5c); /* Standard syntax */
+    color: #ffffff;
+    font-family: 'Lato';
+    }
+
+.container{
+    margin: auto 0 auto 0;
+}
+
+.home-title>h1{
+    text-align: left;
+    margin: 100px 0 0 0;
+    font-family: 'Lato';
+    color: #ffffff;
+    font-size: 125px;
+}
+
+hr{
+    margin: -20px 0 100px 0;
+}
