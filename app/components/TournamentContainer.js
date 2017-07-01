@@ -3,7 +3,8 @@
 
 import React from "react";
 import TournamentAllOptions from "./TournamentAllOptions";
-//import TournamentAllPanel from "./TournamentAllPanel";
+import TournamentAllPanel from "./TournamentAllPanel";
+import helpers from "./../utilities/helpers"
 
 // // Our Container component's only purpose will be to hold and center the rest of our content
 // // props.children will be substituted for any nested components deployed
@@ -48,7 +49,7 @@ var TournamentContainer = React.createClass({
                 <div className="container">
                     <h3>All</h3>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
-                    {/*<TournamentAllPanel />*/}
+                    <TournamentAllPanel />
                 </div>
             );
         } else if (this.state.currentDisplay == "attending"){
@@ -56,7 +57,7 @@ var TournamentContainer = React.createClass({
                 <div className="container">
                     <h3>Attending</h3>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
-                    {/*<TournamentAllPanel />*/}
+                    <TournamentAllPanel />
                 </div>
             );
         } else if (this.state.currentDisplay == "created"){
@@ -64,7 +65,7 @@ var TournamentContainer = React.createClass({
                 <div className="container">
                     <h3>Created</h3>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
-                    {/*<TournamentAllPanel />*/}
+                    <TournamentAllPanel />
                 </div>
             );
         }

@@ -17,7 +17,24 @@ var User = require('../models/user');
 var Tournament = require('../models/tournament');
 
 
-router.get('/all', function (req, res) {
+router.get('/all', function (req,res){
+    console.log("req.user")
+    console.log(req.user)
+    Tournament.find({}).populate("comments", "registeredTeams")
+    .exec(function (error, doc) {
+        // Send any errors to the browser
+        if (error) {
+            res.send(error);
+        }
+        // Or send the doc to the articles in handlebars
+        else {
+            res.send(doc);
+        }
+    })
+})
+
+
+router.get('/user', function (req, res) {
     console.log("req.user")
     console.log(req.user)
     User.findOne({_id: req.user._id}).populate("tournaments")

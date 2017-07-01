@@ -4,6 +4,13 @@
 $(document).ready(function() {
 
     console.log("/tournaments/all activated")
+    $(".extend-button").on('click', function(){
+		 console.log("extende pressed");
+	});
+
+
+//.extend-div
+
     // $.getJSON("/tournaments/all", function(req, res) {
     //     if(req.tournaments.length>0){
     //         // console.log("req.tournaments");

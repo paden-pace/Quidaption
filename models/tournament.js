@@ -8,28 +8,42 @@ var db = mongoose.connection;
 
 var TournamentSchema = mongoose.Schema({
     name: {
-        type: String,
+        type: String
     },
     email: {
-        type: String,
+        type: String
     },
     password: {
-        type: String,
+        type: String
     },
     league: {
-        type: String,
+        type: String
     },
     date: {
-        type: String, 
+        type: String
     },
     location: {
-        type: String,
+        type: String
+    },
+    information: {
+        type: String
     },
     registeredTeams: [
         {
             type: Schema.Types.ObjectId,
             ref: "Team"
         }
+    // ],
+    // attendees: [
+    //     {
+    //         name: String,
+    //     }
+    // ],
+    // comments: [
+    //     {
+    //         type: Schema.Types.ObjectId,
+    //         ref: "Comment"
+    //     }
     ]
 });
 
