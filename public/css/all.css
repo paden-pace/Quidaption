@@ -16,13 +16,13 @@ Lightest Gray Blue: #67718a
 
 
 
-.nav>li>a:focus, .nav>li>a:hover {
+.nav>li>a:focus, .nav>li>a:hover, .navbar-brand>h2:focus, .navbar-brand>h2:hover {
     background-color: transparent;
     color: #3c1c3d;
     font-weight: bolder;
 }
 
-.nav>li:focus, .nav>li:hover {
+.nav>li:focus, .nav>li:hover, .navbar-brand>h2:focus, .navbar-brand>h2:hover{
     background-color: #ffffff;
     font-weight: bolder;
     opacity: .4;
@@ -36,6 +36,13 @@ Lightest Gray Blue: #67718a
 .navbar-brand>h2{
     color: #ffffff;
     font-family: 'Lato';
+    padding: 5px;
+    margin: 0px 0px 0px 20px;
+}
+
+
+.navbar-brand{
+    padding: 0px;
 }
 
 body {
@@ -46,11 +53,9 @@ body {
     background: linear-gradient(to bottom right, #3c1c3d, #b45b5c); /* Standard syntax */
     color: #ffffff;
     font-family: 'Lato';
+    text-align: center;
     }
 
-.container{
-    margin: auto 0 auto 0;
-}
 
 .home-title>h1{
     text-align: left;
@@ -62,4 +67,23 @@ body {
 
 hr{
     margin: -20px 0 100px 0;
+}
+
+.hr-sub{
+    margin: 0px auto 0px auto;
+    width: 50%;
+    text-align: center;
+}
+
+.options-row{
+    margin: 50px auto;
+}
+
+.options-title{
+    margin: 20px auto;
+    font-size: 28px;
+}
+
+.options-par{
+    font-size: 18px;
 }

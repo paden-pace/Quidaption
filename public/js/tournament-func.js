@@ -3,10 +3,10 @@
 
 $(document).ready(function() {
 
-    console.log("/tournaments/all activated")
-    $(".extend-button").on('click', function(){
-		 console.log("extende pressed");
-	});
+    // console.log("/tournaments/all activated")
+    // $(".extend-button").on('click', function(){
+	// 	 console.log("extended pressed");
+	// });
 
 
 //.extend-div
