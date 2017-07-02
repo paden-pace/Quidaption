@@ -8,7 +8,9 @@
      <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
-    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/all.css"/>
+
+    <link rel="stylesheet" href="/css/tournaments.css"/>
 
     <!-- JQuery Link -->
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -17,7 +19,7 @@
     <script type="text/javascript" src="/js/tournament-func.js"></script>
 
     <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -26,21 +28,21 @@
   <div class="container">
       <div class="header clearfix">
         <nav class="navbar">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/">
                         <h2>QA</h2>
                     </a>
                 </div>
                 <ul class="nav nav-pills pull-right">
-                    <li role="presentation" id="home-tab" class="active"><a href="/">Home</a></li>
-                    <li role="presentation" id="game-tab" class="active"><a href="/game">Game</a></li>
-                    <li role="presentation" id="tournaments-tab" class="active"><a href="/tournaments">Tournaments</a></li>
-                    <li role="presentation" id="profile-tab" class="active"><a href="/profile">Profile</a></li>
-                    <li role="presentation" id="team-tab" class="active"><a href="/teams">Teams</a></li>
-                    <li role="presentation" id="team-tab" class="active"><a href="/links">Links</a></li>
-                    <li role="presentation" id="login-tab" class="active"><a href="/login">Log-in</a></li>
-                    <li role="presentation" id="register-tab" class="active"><a href="/register">Register</a></li>
+                    <li role="presentation" id="home-tab" class=""><a href="/">Home</a></li>
+                    <li role="presentation" id="game-tab" class=""><a href="/game">Game</a></li>
+                    <li role="presentation" id="tournaments-tab" class=""><a href="/tournaments">Tournaments</a></li>
+                    <li role="presentation" id="profile-tab" class=""><a href="/profile">Profile</a></li>
+                    <li role="presentation" id="team-tab" class=""><a href="/teams">Teams</a></li>
+                    <li role="presentation" id="team-tab" class=""><a href="/links">Links</a></li>
+                    <li role="presentation" id="login-tab" class=""><a href="/login">Log-in</a></li>
+                    <li role="presentation" id="register-tab" class=""><a href="/register">Register</a></li>
                     <li role="presentation" id="logout-tab" ><a href="/users/logout">Log-out</a></li>
                 </ul>
             </div>
@@ -96,9 +98,11 @@
 	<!-- All of our JS code will be transpiled into this bundle.js file -->
 	<script src="bundle.js"></script>
 	
-      <footer class="footer">
-        <p>© 2017 Quidaption</p>
-      </footer>
+    <div class="footer">
+        <footer>
+            <p>© 2017 Quidaption</p>
+        </footer>
+    </div>
 
     </div>
 

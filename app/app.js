@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 
 // Including our Panel and Container components
 //import TournamentAllPanel from "./components/TournamentAllPanel";
-import TournamentContainer from "./components/TournamentContainer";
+import TournamentContainer from "./tournament/TournamentContainer";
 
 // Creating an App component which renders a Panel inside of a Container
 const App = () => (

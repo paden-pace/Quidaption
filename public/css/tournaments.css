@@ -1,0 +1,62 @@
+/* ==================================
+Colors: 
+
+Dark Purple: #3c1c3d
+Dark Flat Pink: #b45b5c
+Light Gray Purple: #ad7d81
+Light Tangerine: #ff895c
+Faded Tangerine: #f18e65
+Faded Light Gold: #ffd792
+Darker Gray Blue: #313445
+Medium Gray Blue: #464d5f
+Lightest Gray Blue: #67718a
+=========================================*/
+
+
+
+body{
+    background-color: #ffffff;
+}
+
+div>.panel-add{
+    background-color: red;
+}
+
+.panel{
+    background-color: transparent;
+}
+
+.panel-default {
+    border: none;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    background-color: transparent;
+    color: #3c1c3d;
+}
+
+.all-options-button{
+    background-color: #ffffff;
+    color: #3c1c3d;
+    border: none;
+    margin: 0px 20px;
+    font-size: 18px;
+}
+.extend-button{
+    background-color: #ffffff;
+    color: #3c1c3d;
+    border: none;
+    margin: 0px 20px;
+    font-size: 18px;
+    width: 20%;
+}
+.individuals-single-div{
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    background: #f18e65; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, #f18e65, #67718a); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #f18e65, #67718a); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #f18e65, #67718a); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right,#f18e65, #67718a); /* Standard syntax */
+}
