@@ -28,6 +28,16 @@ Lightest Gray Blue: #67718a
     opacity: .4;
 }
 
+
+.nav-pills>li.active>a{
+    background-color: transparent;
+}
+
+.nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    background-color: transparent;
+    color: #3c1c3d;
+}
+
 .nav>li>a {
     color: #ffffff;
     font-family: 'Lato';

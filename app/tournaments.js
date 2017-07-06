@@ -49,22 +49,6 @@ router.get('/user', function (req, res) {
         }
     })
 });
-
-router.get('/checkUser', function (req, res) {
-    console.log("/checkUser req.user")
-    console.log(req.user)
-    User.findOne({_id: req.user._id})
-    .exec(function (error, doc) {
-        // Send any errors to the browser
-        if (error) {
-            res.send(error);
-        }
-        // Or send the doc to the articles in handlebars
-        else {
-            res.send(doc);
-        }
-    })
-});
     
 
 

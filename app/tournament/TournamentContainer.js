@@ -4,9 +4,10 @@
 import React from "react";
 import TournamentAllOptions from "./TournamentAllOptions";
 import TournamentAllPanel from "./TournamentAllPanel";
+import TournamentCreatedPanel from "./TournamentCreatedPanel";
 import TournamentAddPanel from "./TournamentAddPanel";
 import helpers from "./../utilities/helpers"
-
+import SiteNav from "./../siteNav"
 // // Our Container component's only purpose will be to hold and center the rest of our content
 // // props.children will be substituted for any nested components deployed
 // const TournamentContainer = props => (
@@ -51,7 +52,9 @@ var TournamentContainer = React.createClass({
     render: function() {
         if(this.state.currentDisplay == "all"){
             return (
-                <div className="container">
+                <div className="container tournaments-container" id="tournaments-container">
+		            <SiteNav />
+                    <h2 className="page-header"> Tournaments </h2>
                     <h3>All</h3>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
                     <TournamentAllPanel />
@@ -59,7 +62,9 @@ var TournamentContainer = React.createClass({
             );
         } else if (this.state.currentDisplay == "attending"){
             return (
-                <div className="container">
+                <div className="container tournaments-container" id="tournaments-container">
+		            <SiteNav />
+                    <h2 className="page-header"> Tournaments </h2>
                     <h3>Attending</h3>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
                     <TournamentAllPanel />
@@ -67,15 +72,18 @@ var TournamentContainer = React.createClass({
             );
         } else if (this.state.currentDisplay == "created"){
             return (
-                <div className="container">
-                    <h3>Created</h3>
+                <div className="container tournaments-container" id="tournaments-container">
+		            <SiteNav />
+                    <h2 className="page-header"> Tournaments </h2>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
-                    <TournamentAllPanel />
+                    <TournamentCreatedPanel />
                 </div>
             );
         } else if (this.state.currentDisplay == "add"){
             return (
-                <div className="container">
+                <div className="container tournaments-container" id="tournaments-container">
+		            <SiteNav />
+                    <h2 className="page-header"> Tournaments </h2>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
                     <TournamentAddPanel />
                 </div>
