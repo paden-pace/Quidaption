@@ -60,3 +60,8 @@ div>.panel-add{
     background: -moz-linear-gradient(bottom right, #f18e65, #67718a); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom right,#f18e65, #67718a); /* Standard syntax */
 }
+
+
+.practice-div{
+    background-color: red;
+}

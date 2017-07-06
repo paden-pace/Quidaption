@@ -3,11 +3,11 @@
 
 import React from "react";
 import TournamentAllOptions from "./TournamentAllOptions";
-import TournamentAllPanel from "./TournamentAllPanel";
+import TournamentCreatedPanel from "./TournamentCreatedPanel";
 
 
 
-// class TournamentIndividuals extends Component {
+// class TournamentCreatedIndividuals extends React.Component {
 //   constructor() {
 //     super();
 //     // This component has an "open" state that's either true or false
@@ -21,51 +21,47 @@ import TournamentAllPanel from "./TournamentAllPanel";
 //   };
 //   render() {} 
 
-const TournamentIndividuals = React.createClass({
-    getInitialState: function(){
+const TournamentCreatedIndividuals = React.createClass({
+    getInitialState: function(props){
         return {
             data: this.props.data,
             handleClick: this.props.handleClick,
-            //extended: false
+            extended: false
             }
     },
     newExtendInformation: function(selectedId){
         console.log("selectedId");
         console.log(selectedId);
         // document.getElementsByClassName("extended-div")
-        document.getElementById("extended-div-"+selectedId).className += 'practice-div';
+        // document.getElementById("extended-div"+selectedId)
     },
     extendInformation: function(){
         console.log("extended clicked.");
         this.setState({extended: true})
-    },
-    handleClick: function() {
-        this.setState({extended: true});
-        //(this.setState({someName}));
     },
     reduceInformation: function(){
         console.log("extended clicked.");
         this.setState({extended: false})
     },
     render: function(){
-    // var TournamentIndividuals = (props) => {
+    // var TournamentCreatedIndividuals = (props) => {
     //     const { data } = props;
     //     const { handleClick } = props;
-        console.log("Data in TournamentIndividuals");
-        console.log(this.props.data);
-        if (this.props.data){
-            console.log("Data in TournamentIndividuals");
-            console.log(this.data);
+        console.log("data.tournaments in TournamentCreatedIndividuals");
+        console.log(this.props.data.tournaments);
+        if (this.props.data.tournaments){
+            console.log("Data in TournamentCreatedIndividuals");
+            console.log(this.props.data.tournaments);
             if(this.state.extended){
             return (
                 <div className="individuals-all-div">
                     {
-                    this.props.data.map((item) => (
+                    this.props.data.tournaments.map((item) => (
                         <div className="individuals-single-outter-div" key={item._id}>
                         <div className="individuals-single-div">
                             <h3 className="h-name">{item.name}</h3>
                             <h4 className="h-date">Date: {item.date}</h4>
-                            <div id="extended-div-{item._id}" className="extended-div practice-div">
+                            <div id="extended-div-{item._id}" className="extended-div">
                                 <h4 className="h-league">League: {item.league}</h4>
                                 <h4 className="h-location">Location: {item.location}</h4>
                                 <h4 className="h-teams">Registered Teams: </h4>
@@ -76,7 +72,7 @@ const TournamentIndividuals = React.createClass({
                                         </div>
                                     ))}
                                 </div>
-                                <h4 className="h-attendees">Attendees: </h4>
+                                {/*<h4 className="h-attendees">Attendees: </h4>
                                 {<div className="attendees-all-div">
                                     <ul className="attendees-list">
                                     {item.attendees.map((attendee)=>(
@@ -95,7 +91,7 @@ const TournamentIndividuals = React.createClass({
                                             <p>{comment.body}</p>
                                         </div>
                                     ))}
-                                </div>
+                                </div>*/}
                             <button className="extend-button" onClick={this.reduceInformation}>Reduce</button>
                             </div>
                         </div>
@@ -108,12 +104,12 @@ const TournamentIndividuals = React.createClass({
                 return (
                 <div className="individuals-all-div">
                     {
-                    this.props.data.map((item) => (
+                    this.props.data.tournaments.map((item) => (
                         <div className="individuals-single-outter-div" key={item._id}>
                         <div className="individuals-single-div">
-                            <h3 className="h-name ">{item.name}</h3>
+                            <h3 className="h-name">{item.name}</h3>
                             <h4 className="h-date">Date: {item.date}</h4>
-                            <button className="extend-button" onClick={this.handleClick}>More</button>
+                            <button className="extend-button" onClick={this.extendInformation}>More</button>
                         </div>
                         </div>
                     ))
@@ -124,7 +120,7 @@ const TournamentIndividuals = React.createClass({
         } else {
             return (
             <div className="panel panel-default">
-                <h4>Tournament Options will display here</h4>
+                <h4>Tournament You created will display here</h4>
             </div>
             );
         }
@@ -132,7 +128,7 @@ const TournamentIndividuals = React.createClass({
 });
 
 // Exporting this component as the default (only) export
-export default TournamentIndividuals;
+export default TournamentCreatedIndividuals;
 
  {/*<h4 className="h-attendees">Attendees: </h4>
 {<div className="attendees-all-div">
