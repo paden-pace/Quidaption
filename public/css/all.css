@@ -124,3 +124,7 @@ hr{
 input{
     color: #000000;
 }
+
+.red{
+    background-color: red;
+}
