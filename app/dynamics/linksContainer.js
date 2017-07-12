@@ -26,7 +26,7 @@ const LinksContainer = React.createClass({
         return (
             <div className="all-links">
 
-                <div className="row links-row">
+                <div className="row links-main-row">
                     <h1>Checkout some helpful Quidditch Related Links</h1>
                 </div>
 

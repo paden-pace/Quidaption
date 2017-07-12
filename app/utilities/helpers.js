@@ -11,7 +11,7 @@ var helpers = {
     // This function hits our own server to retrieve the record of query results
     getTournaments: function() {
         console.log("helpers.getTournament Activated")
-        return axios.get("/tournaments/all");
+        return axios.get("/tournaments/user");
     },
 
     getUserTournaments: function(){
