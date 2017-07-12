@@ -10,7 +10,9 @@ import helpers from "./../utilities/helpers"
 
 
 const HomeContainer = React.createClass({
-    getInitialState: function(){
+    getInitialState: function(props){
+        console.log("props from HomeContainer");
+        console.log(props);
             // helpers.getTournaments().then(function(response){
             //     console.log("response");
             //     console.log(response);
@@ -20,6 +22,20 @@ const HomeContainer = React.createClass({
             //     }
             // });
         return {}
+    },
+
+    //const { handleClick } = props;
+
+    componentDidMount: function() {
+        console.log("showAllTournaments at least activated.");
+        helpers.checkUser().then(function(response){
+            console.log("response");
+            console.log(response);
+            if (response !== this.state.user) {
+                console.log("User", response.data);
+                //this.setState({ tournaments: response.data });
+            }
+        }.bind(this));
     },
             
     render: function(){
