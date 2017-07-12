@@ -56,7 +56,7 @@ const TournamentIndividuals = React.createClass({
         if (this.props.data){
             console.log("Data in TournamentIndividuals");
             console.log(this.data);
-            if(this.state.extended){
+            //if(this.state.extended){
             return (
                 <div className="individuals-all-div">
                     {
@@ -65,7 +65,7 @@ const TournamentIndividuals = React.createClass({
                         <div className="individuals-single-div">
                             <h3 className="h-name">{item.name}</h3>
                             <h4 className="h-date">Date: {item.date}</h4>
-                            <div id="extended-div-{item._id}" className="extended-div practice-div">
+                            <div id={item._id} className="extended-div practice-div hide">
                                 <h4 className="h-league">League: {item.league}</h4>
                                 <h4 className="h-location">Location: {item.location}</h4>
                                 {/*<h4 className="h-teams">Registered Teams: </h4>
@@ -96,31 +96,32 @@ const TournamentIndividuals = React.createClass({
                                         </div>
                                     ))}
                                 </div>*/}
-                            <button className="extend-button" onClick={this.reduceInformation}>Reduce</button>
+                            <button data-id={item._id} className="close-tournament-button">Close</button>
                             </div>
+                            <button data-id={item._id} className="extend-tournament-button">Expand</button>
                         </div>
                         </div>
                     ))
                     }
                 </div>
             );
-            } else {
-                return (
-                <div className="individuals-all-div">
-                    {
-                    this.props.data.map((item) => (
-                        <div className="individuals-single-outter-div" key={item._id}>
-                        <div className="individuals-single-div">
-                            <h3 className="h-name ">{item.name}</h3>
-                            <h4 className="h-date">Date: {item.date}</h4>
-                            <button className="extend-button" onClick={this.handleClick}>More</button>
-                        </div>
-                        </div>
-                    ))
-                    }
-                </div>
-            );
-            }
+            // } else {
+            //     return (
+            //     <div className="individuals-all-div">
+            //         {
+            //         this.props.data.map((item) => (
+            //             <div className="individuals-single-outter-div" key={item._id}>
+            //             <div className="individuals-single-div">
+            //                 <h3 className="h-name ">{item.name}</h3>
+            //                 <h4 className="h-date">Date: {item.date}</h4>
+            //                 <button className="extend-button" onClick={this.handleClick}>More</button>
+            //             </div>
+            //             </div>
+            //         ))
+            //         }
+            //     </div>
+            // );
+            //}
         } else {
             return (
             <div className="panel panel-default">
