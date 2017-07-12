@@ -8,8 +8,8 @@ import helpers from "./../utilities/helpers";
 import HomeContainer from "./../dynamics/homeContainer";
 import GameContainer from "./../dynamics/gameContainer";
 import LinksContainer from "./../dynamics/linksContainer";
-import LoginContainer from "./../dynamics/loginContainer";
-import RegisterContainer from "./../dynamics/registerContainer"; 
+// import LoginContainer from "./../dynamics/loginContainer";
+// import RegisterContainer from "./../dynamics/registerContainer"; 
 // // Our Container component's only purpose will be to hold and center the rest of our content
 // // props.children will be substituted for any nested components deployed
 // const TournamentContainer = props => (
@@ -87,7 +87,8 @@ var AllContainer = React.createClass({
                 ]
             },
             currentDisplay: "home", 
-            currentUser: "", 
+            currentUser: "",
+            currentUserId: "", 
             inputName: '',
             inputPassword: '',
             registerName: '',

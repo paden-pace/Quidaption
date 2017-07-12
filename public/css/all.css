@@ -28,6 +28,25 @@ Lightest Gray Blue: #67718a
     opacity: .4;
 }
 
+a{
+    color: #f18e65;
+}
+
+h3.hello-user{
+    color:  #e49fc8;
+    float: left;
+    margin: 10px auto auto 30px;
+    text-align: center;
+}
+
+.navbar-user{
+    float: left;
+}
+
+a:hover, a:focus{
+    color: #e49fc8;
+}
+
 
 .nav-pills>li.active>a{
     background-color: transparent;
@@ -96,6 +115,10 @@ hr{
 
 .options-par{
     font-size: 18px;
+}
+
+.links-row{
+    text-align: left;
 }
 
 input{

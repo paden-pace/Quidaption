@@ -29,9 +29,11 @@ const SiteNav = (props) => {
                             <a className="navbar-brand" href="/">
                                 <h2>QA</h2>
                             </a>
-                            <a className="">
-                                <h2>Hello {user}</h2>
-                            </a>
+                        </div>
+                        <div className="navbar-user">
+                            <h3 className="hello-user">
+                                    Hello, {user}
+                            </h3>
                         </div>
                         <ul className="nav nav-pills pull-right">
 

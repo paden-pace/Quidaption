@@ -68,7 +68,7 @@ const TournamentIndividuals = React.createClass({
                             <div id="extended-div-{item._id}" className="extended-div practice-div">
                                 <h4 className="h-league">League: {item.league}</h4>
                                 <h4 className="h-location">Location: {item.location}</h4>
-                                <h4 className="h-teams">Registered Teams: </h4>
+                                {/*<h4 className="h-teams">Registered Teams: </h4>
                                 <div className="registered-team-all-div">
                                     {item.registeredTeams.map((team)=>(
                                         <div key={team.name} className="registered-team-solo-div">
@@ -95,7 +95,7 @@ const TournamentIndividuals = React.createClass({
                                             <p>{comment.body}</p>
                                         </div>
                                     ))}
-                                </div>
+                                </div>*/}
                             <button className="extend-button" onClick={this.reduceInformation}>Reduce</button>
                             </div>
                         </div>
