@@ -24,30 +24,30 @@ const RegisterContainer = React.createClass({
             
     render: function(){
         return (
-            <div class="body body-div" id="register-body">
-                <h2 class="page-header"> Register </h2>
+            <div className="body body-div" id="register-body">
+                <h2 className="page-header"> Register </h2>
                 <form method="post" action="/users/register">
-                    <div class="form-group">
+                    <div className="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="name" />
+                        <input type="text" className="form-control" placeholder="Name" name="name" />
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" placeholder="Username" name="username" />
+                        <input type="text" className="form-control" placeholder="Username" name="username" />
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label>Email</label>
-                        <input type="text" class="form-control" placeholder="Email" name="email" />
+                        <input type="text" className="form-control" placeholder="Email" name="email" />
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password" name="password" />
+                        <input type="password" className="form-control" placeholder="Password" name="password" />
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label>Confirm Password</label>
-                        <input type="password" class="form-control" placeholder="Password" name="password2" />
+                        <input type="password" className="form-control" placeholder="Password" name="password2" />
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" className="btn btn-default">Submit</button>
                 </form>
             </div>
         );
