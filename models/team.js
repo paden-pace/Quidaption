@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var Schema = mongoose.Schema;
 
-  mongoose.connect('mongodb://localhost/rollinit');
+  mongoose.connect('mongodb://localhost/quidapp');
   var db = mongoose.connection;
 
 var TeamSchema = mongoose.Schema({
@@ -29,7 +29,7 @@ var TeamSchema = mongoose.Schema({
     members: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Member"
+            ref: "User"
         }
     ],
     chats: [
@@ -38,27 +38,18 @@ var TeamSchema = mongoose.Schema({
             ref: "Chat"
         }
     ],
-    captains: [
+    owner: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Captain"
+            ref: "User"
         }
     ]
-
-    //},
-    // dm: {
-    //     type: Boolean,
 });
 
 var Team = module.exports = mongoose.model('Team', TeamSchema);
 
 module.exports.createTeam = function(newTeam, callback){
-    bcrypt.genSalt(10, function(err, salt) {
-    bcrypt.hash(newTeam.password, salt, function(err, hash) {
-            newTeam.password = hash;
-            newTeam.save(callback);
-        });
-    });
+    newTeam.save(callback);
 }
 
 module.exports.getTeamByName = function(name, callback){
@@ -66,11 +57,17 @@ module.exports.getTeamByName = function(name, callback){
     Team.findOne(query, callback);
 }
 
-module.exports.comparePassword = function(candidatePassword, hash, callback){
-    bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
-        if(err) throw err;
-        callback(null, isMatch);
-    });
+module.exports.comparePassword = function(userID, candidatePassword, team, callback){
+    console.log("module team candidatePassword")
+    console.log(candidatePassword)
+    console.log("module team team.password")
+    console.log(team.password)
+    if(candidatePassword == team.password){
+        console.log("module team passwords MATCH")
+        callback(null, true);
+    } else {
+        console.log("module team passwords don't match")
+    }
 }
 
 module.exports.getTeamById = function(id, callback){

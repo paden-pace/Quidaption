@@ -31,7 +31,10 @@ const TournamentAddPanel = React.createClass({
 				<label>Name</label>
 				<input type="text" className="form-control" placeholder="The Southwest Tournament" name="name" />
 			</div>
-
+            <div className="form-group">
+				<label>Contact Email</label>
+				<input type="text" className="form-control" placeholder="Bob@example.com" name="email" />
+			</div>
             <div className="form-group">
                 <label>Password</label>
                 <input type="password" className="form-control" placeholder="Password" name="password" />
@@ -49,6 +52,17 @@ const TournamentAddPanel = React.createClass({
                     <option value="Fantasy">Fantasy</option>
                     <option value="Other">Other</option>*/}
             </div>
+            {/*<div class="form-group">
+				<label>League</label>
+				<select id="select-race" class="form-control" name="league">
+					<option selected disabled="true">Select</option>
+					<option>IQA</option>
+					<option>MLQ</option>
+					<option>Fantasy</option>
+					<option>TSL</option>
+					<option>Other</option>
+				</select>
+			</div>*/}
 			<div className="form-group">
 				<label>Date</label>
 				<input type="text" className="form-control" placeholder="June 20, 2017" name="date" />
@@ -56,6 +70,10 @@ const TournamentAddPanel = React.createClass({
 			<div className="form-group">
 				<label>Location</label>
 				<input type="text" className="form-control" placeholder="422 E 6th St, Austin, TX 78701" name="location" />
+			</div>
+            <div className="form-group">
+				<label>Additional Information</label>
+				<input type="text" className="form-control" placeholder="This is where you would include information regarding your tournament." name="information" />
 			</div>
 			<button type="submit" className="btn btn-default">Submit</button>
             </form>

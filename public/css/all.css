@@ -14,6 +14,23 @@ Medium Gray Blue: #464d5f
 Lightest Gray Blue: #67718a
 =========================================*/
 
+.nav{
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+nav{
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+nav ul a {
+    font-size: 1.5rem;
+}
 
 
 .nav>li>a:focus, .nav>li>a:hover, .navbar-brand>h2:focus, .navbar-brand>h2:hover {

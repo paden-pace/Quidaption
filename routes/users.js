@@ -148,7 +148,7 @@ router.post('/login',
         // `req.user` contains the authenticated user.
         //res.redirect('/users/' + req.user.username);
 
-        res.redirect('/tournaments');
+        res.redirect('/');
     }
 );
 
