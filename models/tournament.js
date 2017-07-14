@@ -1,4 +1,3 @@
-
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var Schema = mongoose.Schema;
@@ -33,17 +32,18 @@ var TournamentSchema = mongoose.Schema({
             type: Schema.Types.ObjectId,
             ref: "Team"
         }
-    // ],
-    // attendees: [
-    //     {
-    //         name: String,
-    //     }
-    // ],
-    // comments: [
-    //     {
-    //         type: Schema.Types.ObjectId,
-    //         ref: "Comment"
-    //     }
+    ],
+    attendees: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        }
+    ],
+    comments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Comment"
+        }
     ]
 });
 

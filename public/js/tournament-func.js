@@ -16,6 +16,7 @@ $(document).on("click", ".extend-tournament-button", function() {
          console.log("thisId from Button");
          console.log(thisId);
          $("#"+thisId).removeClass("hide");
+         //$(".extend-tournament-button").addClass("hide");
 
     });
 
@@ -23,6 +24,7 @@ $(document).on("click", ".extend-tournament-button", function() {
          console.log("close clicked")
          var thisId = $(this).attr("data-id");
          $("#"+thisId).addClass("hide");
+         //$(".extend-tournament-button").removeClass("hide");
     //     console.log("thisId");
     //     console.log(thisId);
     //     $(".char-age"+thisId).addClass("hide");

@@ -3,13 +3,13 @@
 
 
 import React, { Component } from "react";
-import TournamentAllOptions from "./TournamentAllOptions";
-import TournamentIndividuals from "./TournamentIndividuals";
+import TeamAllOptions from "./TeamAllOptions";
+import TeamIndividuals from "./TeamIndividuals";
 import helpers from "./../utilities/helpers"
 
 
 
-const TournamentAllPanel = React.createClass({
+const TeamAllPanel = React.createClass({
   getInitialState: function(){
         // helpers.getTournaments().then(function(response){
         //     console.log("response");
@@ -20,29 +20,29 @@ const TournamentAllPanel = React.createClass({
         //     }
         // });
       return {
-            tournaments: []
+            teams: []
         }
     },
     componentDidMount: function() {
-        console.log("showAllTournaments at least activated.");
-        helpers.getAllTournaments().then(function(response){
+        console.log("showAllTeams at least activated.");
+        helpers.getTeams().then(function(response){
             console.log("response");
-            console.log(response.data);
-            if (response.data !== this.state.tournaments) {
-                console.log("Tournaments", response.data);
-                this.setState({ tournaments: response.data});
+            console.log(response.data.teams);
+            if (response.data !== this.state.teams) {
+                console.log("Teams", response.data);
+                this.setState({ teams: response.data});
             }
         }.bind(this));
     },
     render: function(){
         return (
         <div className="panel panel-default all-inner-div">
-            <h2> All Tournaments </h2>
-            <TournamentIndividuals data={this.state.tournaments}/>
+            <h2> My Teams </h2>
+            <TeamIndividuals data={this.state.teams}/>
         </div>
         );
     }
 });
 
 // Exporting our Panel component
-export default TournamentAllPanel;
+export default TeamAllPanel;

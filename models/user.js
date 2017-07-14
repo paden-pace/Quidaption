@@ -25,6 +25,18 @@ var UserSchema = mongoose.Schema({
             ref: "Tournament"
         }
     ],
+    attendingTournaments:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: "AttendingTournament"
+        }
+    ],
+    createdTeams:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Team"
+        }
+    ],
     teams: [
         {
             type: Schema.Types.ObjectId,

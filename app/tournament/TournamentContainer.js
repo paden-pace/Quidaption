@@ -52,9 +52,7 @@ var TournamentContainer = React.createClass({
     render: function() {
         if(this.state.currentDisplay == "all"){
             return (
-                <div className="container tournaments-container" id="tournaments-container">
-		            <SiteNav />
-                    <h2 className="page-header"> Tournaments </h2>
+                <div className="container tournaments-container" id="tournaments-subcontainer">
                     <h3>All</h3>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
                     <TournamentAllPanel />
@@ -62,9 +60,7 @@ var TournamentContainer = React.createClass({
             );
         } else if (this.state.currentDisplay == "attending"){
             return (
-                <div className="container tournaments-container" id="tournaments-container">
-		            <SiteNav />
-                    <h2 className="page-header"> Tournaments </h2>
+                <div className="container tournaments-subcontainer" id="tournaments-subcontainer">
                     <h3>Attending</h3>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
                     <TournamentAllPanel />
@@ -72,18 +68,14 @@ var TournamentContainer = React.createClass({
             );
         } else if (this.state.currentDisplay == "created"){
             return (
-                <div className="container tournaments-container" id="tournaments-container">
-		            <SiteNav />
-                    <h2 className="page-header"> Tournaments </h2>
+                <div className="container tournaments-subcontainer" id="tournaments-subcontainer">
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
                     <TournamentCreatedPanel />
                 </div>
             );
         } else if (this.state.currentDisplay == "add"){
             return (
-                <div className="container tournaments-container" id="tournaments-container">
-		            <SiteNav />
-                    <h2 className="page-header"> Tournaments </h2>
+                <div className="container tournaments-subcontainer" id="tournaments-subcontainer">
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
                     <TournamentAddPanel />
                 </div>

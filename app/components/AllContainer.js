@@ -2,7 +2,10 @@
 
 
 import React from "react";
+import TournamentContainer from "./../tournament/TournamentContainer";
 import TournamentAllPanel from "./../tournament/TournamentAllPanel";
+import TeamContainer from "./../team/TeamContainer";
+//import TeamAllPanel from "./../tournament/TeamAllPanel";
 import SiteNav from "./../siteNav";
 import helpers from "./../utilities/helpers";
 import HomeContainer from "./../dynamics/homeContainer";
@@ -267,7 +270,7 @@ var AllContainer = React.createClass({
 		            <SiteNav data={this.state.display} user={this.state.currentUser} handleClick={this.selectDisplay}/>
                     <h2 className="page-header"> Tournaments </h2>
                     {/*<TournamentAllOptions />*/}
-                    <TournamentAllPanel />
+                    <TournamentContainer />
                 </div>
             )
             case "profile": return (
@@ -283,7 +286,7 @@ var AllContainer = React.createClass({
 		            <SiteNav data={this.state.display} user={this.state.currentUser} handleClick={this.selectDisplay}/>
                     <h2 className="page-header"> Teams </h2>
                     {/*<TournamentAllOptions />*/}
-                    <TournamentAllPanel />
+                    <TeamContainer />
                 </div>
             )
             case "links": return (
@@ -386,7 +389,7 @@ var AllContainer = React.createClass({
                         <SiteNav data={this.state.display} user={this.state.currentUser} handleClick={this.selectDisplay}/>
                         <h2 className="page-header"> Teams </h2>
                         {/*<TournamentAllOptions />*/}
-                        <TournamentAllPanel />
+                        <TeamContainer />
                     </div>
                 )
                 case "links": return (

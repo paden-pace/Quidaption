@@ -9,26 +9,16 @@ mongoose.connect('mongodb://localhost/quidapp');
   var db = mongoose.connection;
 
 // Create the Comment schema
-var ChatSchema = new Schema({
-    user: {
+var AttendeeSchema = new Schema({
+    name: {
         type: String,
         index: true
-    },
-    body: {
-        type: String
-    },
-    date: { 
-        type: Date, 
-        default: Date.now 
-    },
-    team: {
-      type: String
     }
 });
 
 
 // Create the Chat model with the ChatSchema
-var Chat = mongoose.model("Chat", ChatSchema);
+var Attendee = mongoose.model("Attendee", AttendeeSchema);
 
 // Export the Chat model
-module.exports = Chat; 
+module.exports = Attendee;

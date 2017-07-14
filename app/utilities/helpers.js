@@ -14,6 +14,11 @@ var helpers = {
         return axios.get("/tournaments/user");
     },
 
+    getAllTournaments: function() {
+        console.log("helpers.getAllTournament Activated")
+        return axios.get("/tournaments/all");
+    },
+
     getUserTournaments: function(){
         console.log("helpers.getTournament Activated")
         return axios.get("/tournaments/user");
@@ -84,7 +89,39 @@ var helpers = {
     goToRegister: function(){
         console.log("helpers.userLogOut Activated");
         return axios.get("/register")
-    }
+    },
+
+    getTeams: function() {
+        console.log("helpers.getTeams Activated")
+        return axios.get("/teams/user");
+    },
+
+
+    getUserCreatedTeams: function() {
+        console.log("helpers.getCreatedTeams Activated")
+        return axios.get("/teams/usercreated");
+    },
+
+    joinTeam: function(teamName, teamPassword) {
+        console.log("helpers.joinTeam Activated")
+        console.log("name username email password")
+        console.log(teamName + " / " + teamPassword)
+        return axios.post("/teams/join",
+        {
+          teamName: teamName,
+          teamPassword: teamPassword
+        }).then(function (response) {
+          console.log("no error in helpers.userRegister")
+          console.log(response.config.data);
+          // var userObj = JSON.parse(response.config.data);
+          //   console.log(userObj.username);
+          //   setNewUser(userObj.username);
+        })
+        .catch(function (error) {
+          console.log("YES error in helpers.userLogin")
+          console.log(error);
+        });
+    },
 
 
 };

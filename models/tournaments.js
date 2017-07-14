@@ -20,7 +20,7 @@ var Tournament = require('../models/tournament');
 router.get('/all', function (req,res){
     console.log("req.user")
     console.log(req.user)
-    Tournament.find({}).populate("registeredTeams")
+    Tournament.find({}).populate("comments", "registeredTeams", "attendees")
     .exec(function (error, doc) {
         // Send any errors to the browser
         if (error) {
