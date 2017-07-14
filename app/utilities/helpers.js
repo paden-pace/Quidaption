@@ -19,9 +19,34 @@ var helpers = {
         return axios.get("/tournaments/all");
     },
 
+    getUserAttendTournaments: function(){
+        console.log("helpers.getTournament Activated")
+        return axios.get("/tournaments/userattend");
+    },
+
     getUserTournaments: function(){
         console.log("helpers.getTournament Activated")
         return axios.get("/tournaments/user");
+    },
+
+    attendTournament: function(tournamentID) {
+        console.log("helpers.attendTournament Activated")
+        console.log("helpers.attendTournament, tournament Name: ")
+        console.log(tournamentID)
+        return axios.post("/tournaments/attend",
+        {
+          tournamentID: tournamentID
+        }).then(function (response) {
+          console.log("no error in helpers.attendTournament")
+          console.log(response.config.data);
+          // var userObj = JSON.parse(response.config.data);
+          //   console.log(userObj.username);
+          //   setNewUser(userObj.username);
+        })
+        .catch(function (error) {
+          console.log("YES error in helpers.attendTournament")
+          console.log(error);
+        });
     },
 
     checkUser: function(){

@@ -52,6 +52,25 @@ router.get('/user', function (req, res) {
     }
 });
 
+
+router.get('/userattend', function (req, res) {
+    console.log("req.user from routes/tournaments/userattend")
+    console.log(req.user)
+    if (req.user){
+        User.findOne({_id: req.user._id}).populate("attendingTournaments")
+        .exec(function (error, doc) {
+            // Send any errors to the browser
+            if (error) {
+                res.send(error);
+            }
+            // Or send the doc to the articles in handlebars
+            else {
+                res.send(doc);
+            }
+        })
+    }
+});
+
 router.get('/checkUser', function (req, res) {
     console.log("/checkUser req.user")
     console.log(req.user)
@@ -157,6 +176,95 @@ router.get("/delete/:id", function(req, res) {
     };
   });
 });
+
+
+
+// Join Team
+router.post('/attend',
+    function(req, res) {
+        console.log("res in tournament/attend");
+        //console.log(res);
+        console.log("req.user in tournament/attend");
+        console.log(req.user);
+        console.log("req.body in tournament/attend");
+        console.log(req.body);
+
+        var tournamentID = req.body.tournamentID;
+        // var teamPassword = req.body.teamPassword;
+        var userID = req.user._id;
+
+        Tournament.getTournamentById(tournamentID, function(err,tournament){
+            if(err) throw err;
+            if(!tournament){
+                console.log("Not a Team");
+                alert("It appears you have not registered that username yet");  
+                res.redirect('/');
+                return done(null, false, {message: 'Unknown Team'});
+            } else {
+                console.log("That is the right password.")
+                User.findOneAndUpdate({ "_id": userID }, {$push: {"attendingTournaments": tournament}})
+            // Execute the above query
+                .exec(function(err, doc) {
+                    console.log("User Push attending tournament worked")
+                    if (err) {
+                        console.log(err);
+                    }
+                    else {
+                        Tournament.findOneAndUpdate({ "_id": tournamentID }, {$push: {"attendees": userID}})
+                        console.log("Tournament Push attendees worked")
+                        //res.send(doc);
+                        //res.redirect('/');
+                    }
+                });
+            }
+        });
+        // If this function gets called, authentication was successful.
+        // `req.user` contains the authenticated user.
+        //res.redirect('/users/' + req.user.username);
+        res.redirect('/');
+    }
+);
+
+// var tournamentChecker = function(userID, teamName, teamPassword, done) {
+//     Team.getTeamByName(teamName, function(err, team){
+//         if(err) throw err;
+//         if(!team){
+//             console.log("Not a Team");
+//             //alert("It appears you have not registered that username yet");  
+//             //res.redirect('/tournaments');
+//             return done(null, false, {message: 'Unknown Team'});
+//         } else {
+//             Team.comparePassword(userID, teamPassword, team, function(err, isMatch){
+//                 console.log("teamPassword from Team.comparePassword")
+//                 console.log(teamPassword)
+//                 console.log("team.password from Team.comparePassword")
+//                 console.log(team.password)
+//                 if(err){
+//                     console.log("err from Team.comparePassword")
+//                     console.log(err)
+//                 };
+//                 if(isMatch){
+//                     console.log("That is the right password.")
+//                     User.findOneAndUpdate({ "_id": userID }, {$push: {"teams": team}})
+//                 // Execute the above query
+//                     .exec(function(err, doc) {
+//                         if (err) {
+//                             console.log(err);
+//                         }
+//                         else {
+//                             //res.send(doc);
+//                             //res.redirect('/tournaments');
+//                         }
+//                     });
+//                 } else {
+//                     console.log("Not the right password.")
+//                     //return done(null, false, {message: 'Invalid password.'});
+//                 }
+//             });
+//         }
+//     });
+//   };
+
 
 
 module.exports = router;
