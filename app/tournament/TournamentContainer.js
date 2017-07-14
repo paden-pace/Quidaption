@@ -5,6 +5,7 @@ import React from "react";
 import TournamentAllOptions from "./TournamentAllOptions";
 import TournamentAllPanel from "./TournamentAllPanel";
 import TournamentCreatedPanel from "./TournamentCreatedPanel";
+import TournamentAttendPanel from "./TournamentAttendPanel";
 import TournamentAddPanel from "./TournamentAddPanel";
 import helpers from "./../utilities/helpers"
 import SiteNav from "./../siteNav"
@@ -53,7 +54,6 @@ var TournamentContainer = React.createClass({
         if(this.state.currentDisplay == "all"){
             return (
                 <div className="container tournaments-container" id="tournaments-subcontainer">
-                    <h3>All</h3>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
                     <TournamentAllPanel />
                 </div>
@@ -61,9 +61,8 @@ var TournamentContainer = React.createClass({
         } else if (this.state.currentDisplay == "attending"){
             return (
                 <div className="container tournaments-subcontainer" id="tournaments-subcontainer">
-                    <h3>Attending</h3>
                     <TournamentAllOptions data={this.state.display} handleClick={this.selectDisplay}/>
-                    <TournamentAllPanel />
+                    <TournamentAttendPanel />
                 </div>
             );
         } else if (this.state.currentDisplay == "created"){

@@ -3,9 +3,11 @@
 
 import React from "react";
 import TournamentContainer from "./../tournament/TournamentContainer";
-import TournamentAllPanel from "./../tournament/TournamentAllPanel";
+import TeamAllPanel from "./../team/TeamAllPanel";
+import TournamentCreatedPanel from "./../tournament/TournamentCreatedPanel";
+import TournamentAttendPanel from "./../tournament/TournamentAttendPanel";
 import TeamContainer from "./../team/TeamContainer";
-//import TeamAllPanel from "./../tournament/TeamAllPanel";
+import TournamentAllPanel from "./../tournament/TournamentAllPanel";
 import SiteNav from "./../siteNav";
 import helpers from "./../utilities/helpers";
 import HomeContainer from "./../dynamics/homeContainer";
@@ -34,10 +36,10 @@ var AllContainer = React.createClass({
                         title: "Home",
                         value: "home"
                     },
-                    {
-                        title: "Game",
-                        value: "game"
-                    },
+                    // {
+                    //     title: "Game",
+                    //     value: "game"
+                    // },
                     {
                         title: "Tournaments",
                         value: "tournaments"
@@ -65,11 +67,11 @@ var AllContainer = React.createClass({
                         title: "Home",
                         value: "home"
                     },
-                    {
-                        title: "Game",
-                        value: "game",
-                        loggedIn: "both"
-                    },
+                    // {
+                    //     title: "Game",
+                    //     value: "game",
+                    //     loggedIn: "both"
+                    // },
                     {
                         title: "Tournaments",
                         value: "tournaments",
@@ -102,15 +104,15 @@ var AllContainer = React.createClass({
         }
     },
     componentDidMount: function() {
-        // console.log("checkUser at least activated.");
-        // helpers.getUserTournaments().then(function(response){
-        //     console.log("response.data from AllContainer");
-        //     console.log(response.data);
-        //     if (response.data.name !== this.state.currentUser) {
-        //         console.log("Current User " +  response.data.name);
-        //         this.setState({ currentUser: response.data.name });
-        //     }
-        // }.bind(this));
+        console.log("checkUser at least activated.");
+        helpers.getUserTournaments().then(function(response){
+            console.log("response.data from AllContainer");
+            console.log(response.data);
+            if (response.data.name !== this.state.currentUser) {
+                console.log("Current User " +  response.data.name);
+                this.setState({ currentUser: response.data.name });
+            }
+        }.bind(this));
     },
     selectDisplay: function (title, value){
         this.setState({currentDisplay: value})
@@ -278,7 +280,9 @@ var AllContainer = React.createClass({
 		            <SiteNav data={this.state.display} user={this.state.currentUser} handleClick={this.selectDisplay}/>
                     <h2 className="page-header"> Profile </h2>
                     {/*<TournamentAllOptions />*/}
-                    <TournamentAllPanel />
+                    <TeamAllPanel />
+                    <TournamentCreatedPanel />
+                    <TournamentAttendPanel />
                 </div>
             )
             case "teams": return (
@@ -378,11 +382,13 @@ var AllContainer = React.createClass({
                 )
                 case "profile": return (
                     <div className="container profile-container" id="profile-container">
-                        <SiteNav data={this.state.display} user={this.state.currentUser} handleClick={this.selectDisplay}/>
-                        <h2 className="page-header"> Profile </h2>
-                        {/*<TournamentAllOptions />*/}
-                        <TournamentAllPanel />
-                    </div>
+		            <SiteNav data={this.state.display} user={this.state.currentUser} handleClick={this.selectDisplay}/>
+                    <h2 className="page-header"> Profile </h2>
+                    {/*<TournamentAllOptions />*/}
+                    <TeamAllPanel />
+                    <TournamentCreatedPanel />
+                    <TournamentAttendPanel />
+                </div>
                 )
                 case "teams": return (
                     <div className="container teams-container" id="teams-container">

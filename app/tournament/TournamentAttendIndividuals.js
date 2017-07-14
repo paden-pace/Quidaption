@@ -3,11 +3,11 @@
 
 import React from "react";
 import TournamentAllOptions from "./TournamentAllOptions";
-import TournamentAllPanel from "./TournamentAllPanel";
-import helpers from "./../utilities/helpers"
+import TournamentAttendPanel from "./TournamentAttendPanel";
 
 
-// class TournamentIndividuals extends Component {
+
+// class TournamentCreatedIndividuals extends React.Component {
 //   constructor() {
 //     super();
 //     // This component has an "open" state that's either true or false
@@ -21,48 +21,42 @@ import helpers from "./../utilities/helpers"
 //   };
 //   render() {} 
 
-const TournamentIndividuals = React.createClass({
-    getInitialState: function(){
+const TournamentAttendIndividuals = React.createClass({
+    getInitialState: function(props){
         return {
             data: this.props.data,
             handleClick: this.props.handleClick,
             //extended: false
             }
     },
-
-    
     newExtendInformation: function(selectedId){
         console.log("selectedId");
         console.log(selectedId);
         // document.getElementsByClassName("extended-div")
-        document.getElementById("extended-div-"+selectedId).className += 'practice-div';
+        document.getElementById("extended-div"+selectedId)
     },
     extendInformation: function(){
         console.log("extended clicked.");
         this.setState({extended: true})
-    },
-    handleClick: function(tournamentID) {
-        helpers.attendTournament(tournamentID);
-        //(this.setState({someName}));
     },
     reduceInformation: function(){
         console.log("extended clicked.");
         this.setState({extended: false})
     },
     render: function(){
-    // var TournamentIndividuals = (props) => {
+    // var TournamentCreatedIndividuals = (props) => {
     //     const { data } = props;
     //     const { handleClick } = props;
-        console.log("Data in TournamentIndividuals");
-        console.log(this.props.data);
-        if (this.props.data){
-            console.log("Data in TournamentIndividuals");
-            console.log(this.data);
+        console.log("data.tournaments in TournamentAttendIndividuals");
+        console.log(this.props.data.attendingTournaments);
+        if (this.props.data.attendingTournaments){
+            console.log("Data in TournamentAttendIndividuals");
+            console.log(this.props.data.attendingTournaments);
             //if(this.state.extended){
             return (
                 <div className="individuals-all-div">
                     {
-                    this.props.data.map((item) => (
+                    this.props.data.attendingTournaments.map((item) => (
                         <div className="individuals-single-outter-div" key={item._id}>
                         <div className="individuals-single-div">
                             <h3 className="h-name">{item.name}</h3>
@@ -123,7 +117,6 @@ const TournamentIndividuals = React.createClass({
                             <button data-id={item._id} className="close-tournament-button">Close</button>
                             </div>
                             <button data-id={item._id} className="extend-tournament-button">Expand</button>
-                            <button data-id={item._id} onClick={() => this.handleClick(item._id)}  className="attend-tournament-button">Attend</button>
                         </div>
                         </div>
                     ))
@@ -134,23 +127,23 @@ const TournamentIndividuals = React.createClass({
             //     return (
             //     <div className="individuals-all-div">
             //         {
-            //         this.props.data.map((item) => (
+            //         this.props.data.tournaments.map((item) => (
             //             <div className="individuals-single-outter-div" key={item._id}>
             //             <div className="individuals-single-div">
-            //                 <h3 className="h-name ">{item.name}</h3>
+            //                 <h3 className="h-name">{item.name}</h3>
             //                 <h4 className="h-date">Date: {item.date}</h4>
-            //                 <button className="extend-button" onClick={this.handleClick}>More</button>
+            //                 <button className="extend-button" onClick={this.extendInformation}>More</button>
             //             </div>
             //             </div>
             //         ))
             //         }
             //     </div>
             // );
-            //}
+            // }
         } else {
             return (
             <div className="panel panel-default">
-                <h4>Tournament Options will display here</h4>
+                <h4>Tournaments, you plan to attend will display here</h4>
             </div>
             );
         }
@@ -158,7 +151,7 @@ const TournamentIndividuals = React.createClass({
 });
 
 // Exporting this component as the default (only) export
-export default TournamentIndividuals;
+export default TournamentAttendIndividuals;
 
  {/*<h4 className="h-attendees">Attendees: </h4>
 {<div className="attendees-all-div">
