@@ -145,5 +145,5 @@ if (process.env.MONGODB_URI){
 var Port = process.env.PORT || 8020;
 // Listener
 app.listen(Port, function() {
-  console.log("App listening on PORT: " + PORT);
+  console.log("App listening on PORT: " + Port);
 });
